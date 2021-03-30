@@ -1,0 +1,63 @@
+footer {
+  width: 100%;
+  height: 121px;
+  position: relative;
+  padding: 48px 0;
+  display: flex;
+}
+
+.footLeft {
+  width: 50%;
+  height: 100%;
+}
+
+.footRight {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+ul li {
+  margin-right: 8px;
+  padding: 0 8px;
+  color: #262b40;
+}
+
+.footerSettings {
+  width: 118px;
+  height: 40px;
+  background-color: white;
+  background-image: url('../Footer/footer_img/iconfinder_SEO_cogwheels_setting_969265.png');
+  background-size: 28px;
+  background-position-y: 7px;
+  background-position-x: 5px;
+  padding-right: 10px;
+  background-repeat: no-repeat;
+  position: fixed;
+  bottom: 0;
+  right: 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.footerSettings span {
+  font-size: 18px;
+}
+
+.footerSettings:hover{
+  cursor: pointer;
+  background-color: lightgray;
+}

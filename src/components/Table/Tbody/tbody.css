@@ -1,0 +1,45 @@
+tr td {
+  font-size: .85rem;
+  font-weight: 400;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+tr td {
+  border-bottom: .0625rem solid #eaedf2 !important;
+}
+
+#number {
+  width: 175px;
+}
+
+#plan {
+  width: 385px;
+}
+
+#issue {
+  width: 231px;
+}
+
+#due {
+  width: 232px;
+}
+
+#price {
+  width: 181px;
+}
+
+#paid {
+  width: 189px;
+}
+
+#dots {
+  width: 168px;
+  background-image: url('../Tbody/tbody_image/iconfinder_dot-more-menu-hide_2205199.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position-x: 25px;
+  background-position-y: 14px;
+  position: relative;
+}
+
