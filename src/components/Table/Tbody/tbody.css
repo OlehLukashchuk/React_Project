@@ -43,3 +43,14 @@ tr td {
   position: relative;
 }
 
+.paid {
+  color: #05a677;
+}
+
+.due {
+  color: #f5b759
+}
+
+.canceled {
+  color: #fa5252;
+}

@@ -1,23 +1,32 @@
-import React from 'react';
-import '../Search/search.css'
+import React from "react";
+import "../Search/search.css";
 
-function Search(){
+function Search(props) {
   return (
-    <div className="inputContainer">
+    <div className={props.class}>
       <span className="inputLogo"></span>
-      <input type="text" placeholder="Search"></input>
+      <input
+        type="text"
+        placeholder="Search"
+        className={props.inputSize}
+      ></input>
     </div>
-  )
+  );
 }
 
-function LargerSearch(){
-  return (
-    <div className="largeContainer">
-      <span className="inputLogo"></span>
-      <input type="text" placeholder="Search" id="large"></input>
-    </div>
-  )
-}
+// class Seach extends React.Component {
+//   render() {
+//     return (
+//       <div className={props.class}>
+//         <span className="inputLogo"></span>
+//         <input
+//           type="text"
+//           placeholder="Search"
+//           className={props.inputSize}
+//         ></input>
+//       </div>
+//     );
+//   }
+// }
 
-
-export {Search,LargerSearch};
+export { Search };

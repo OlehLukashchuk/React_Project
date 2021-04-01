@@ -5,7 +5,6 @@
 }
 
 input[type="text"]{
-  width: 280px;
   height: 100%;
   background-color: white;
   border: 1px solid #d8d8d8;
@@ -42,6 +41,10 @@ input[type="text"]{
   height:42px;
   display:flex;
 }
-#large{
+
+.small{
+  width: 280px;
+}
+.large{
   width: 483px;
 }

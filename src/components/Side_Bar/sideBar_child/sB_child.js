@@ -1,23 +1,24 @@
-import React from 'react';
-import '../sideBar_child/sB_child.css';
-import logo from '../sideBar_child/sB_child_logo/logo.png'
+import React from "react";
+import "../sideBar_child/sB_child.css";
 
-function SbChild(){
+function SbChild(props) {
   return (
-    <div className='SbChild'>
-      <img src={logo}></img>
-      <span>Volt React</span>
+    <div className={`SbChild ${props.active} ${props.arrow}`}>
+      <img src={props.item.icon} alt="someImg"></img>
+      <span>{props.item.text}</span>
     </div>
-  )
+  );
 }
 
-function ActiveSbChild(){
-  return (
-    <div className='activeSb'>
-      <img src={logo}></img>
-      <span>Volt React</span>
-    </div>
-  )
-}
+// class SbChild extends React.Component {
+//   render() {
+//     return (
+//       <div className={`SbChild ${props.active} ${props.arrow}`}>
+//         <img src={props.item.icon} alt="someImg"></img>
+//         <span>{props.item.text}</span>
+//       </div>
+//     );
+//   }
+// }
 
-export  {SbChild,ActiveSbChild};
+export { SbChild };
