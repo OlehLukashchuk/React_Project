@@ -1,18 +1,33 @@
-import React from 'react';
-import {Search} from '../Search/search'
-import '../Header/header.css'
+import React from "react";
+import { Search } from "../Search/search";
+import "../Header/header.css";
 
-function Header(){
-  return(
+function Header() {
+  return (
     <header>
-      <Search/>
+      <Search class={"inputContainer"} inputSize={"small"} />
       <div className="rightHeader">
         <div className="bellLogo"></div>
         <div className="headerImg"></div>
         <span>Bonnie Green</span>
       </div>
     </header>
-  )
+  );
 }
+
+// class Header extends React.Component {
+//   render() {
+//     return (
+//       <header>
+//         <Search class={"inputContainer"} inputSize={"small"} />
+//         <div className="rightHeader">
+//           <div className="bellLogo"></div>
+//           <div className="headerImg"></div>
+//           <span>Bonnie Green</span>
+//         </div>
+//       </header>
+//     );
+//   }
+// }
 
 export default Header;
