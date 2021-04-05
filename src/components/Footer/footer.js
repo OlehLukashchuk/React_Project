@@ -37,16 +37,16 @@ class Footer extends React.Component {
         <div className="footRight">
           <ul>
             <li>
-              <a href="">About</a>
+              <a href="https://some.com">About</a>
             </li>
             <li>
-              <a href="">Themes</a>
+              <a href="https://some.com">Themes</a>
             </li>
             <li>
-              <a href="">Blog</a>
+              <a href="https://some.com">Blog</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="https://some.com">Contact</a>
             </li>
           </ul>
         </div>
