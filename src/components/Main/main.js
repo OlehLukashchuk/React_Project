@@ -1,7 +1,7 @@
 import React from "react";
 import SideBar from "../Side_Bar/sideBar";
 import Header from "../Header/header";
-import { Search } from "../Search/search";
+import Search from "../Search/search";
 import Table from "../Table/table";
 import "../Main/main.css";
 import Footer from "../Footer/footer";
@@ -29,7 +29,7 @@ function Main() {
         </div>
       </div>
       <div className="tableSettings">
-        <Search class={"largeContainer"} inputSize={"large"} />
+        <Search class="largeContainer" inputSize="large" />
         <div className="settingsLogo"></div>
       </div>
       <Table />
@@ -38,7 +38,7 @@ function Main() {
   );
 }
 
-// class Main extends React.Component {
+// class Main extends React.PureComponent {
 //   render() {
 //     return (
 //       <main>
@@ -62,7 +62,7 @@ function Main() {
 //         </div>
 //       </div>
 //       <div className="tableSettings">
-//         <LargerSearch/>
+//       <Search class="largeContainer" inputSize="large" />
 //         <div className="settingsLogo"></div>
 //       </div>
 //       <Table/>
@@ -72,4 +72,4 @@ function Main() {
 //   }
 // }
 
-export default Main;
+export default React.memo(Main);

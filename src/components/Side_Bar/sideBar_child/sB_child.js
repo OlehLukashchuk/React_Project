@@ -10,7 +10,7 @@ function SbChild(props) {
   );
 }
 
-// class SbChild extends React.Component {
+// class SbChild extends React.PureComponent {
 //   render() {
 //     return (
 //       <div className={`SbChild ${props.active} ${props.arrow}`}>
@@ -21,4 +21,4 @@ function SbChild(props) {
 //   }
 // }
 
-export { SbChild };
+export default React.memo(SbChild);

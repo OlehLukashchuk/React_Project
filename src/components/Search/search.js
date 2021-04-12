@@ -14,7 +14,7 @@ function Search(props) {
   );
 }
 
-// class Seach extends React.Component {
+// class Seach extends React.PureComponent {
 //   render() {
 //     return (
 //       <div className={props.class}>
@@ -29,4 +29,4 @@ function Search(props) {
 //   }
 // }
 
-export { Search };
+export default React.memo(Search);
