@@ -27,38 +27,72 @@ function SideBar() {
     { icon: box, text: "Components" },
     { icon: themesberg, text: "Themesberg" },
   ];
+  const link = [
+    "volt",
+    "owerview",
+    "transactions",
+    "settings",
+    "tables",
+    "examples",
+    "plugins",
+    "started",
+    "components",
+    "themesberg",
+  ];
 
   const topArr = topSbChild.map((element, index) => {
     if (index === 2) {
       return (
-        <SbChild item={element} active={"activeSb"} key={`key-${index}`} />
+        <SbChild
+          item={element}
+          active={"activeSb"}
+          key={`key-${index}`}
+          link={link[2]}
+        />
       );
-    }
-    if (index === 4 || index === 5) {
+    } else if (index === 3) {
       return (
         <SbChild
           item={element}
-          active={""}
           arrow={"arrow"}
           key={`key-${index}`}
+          link={link[3]}
+        />
+      );
+    } else if (index === 4) {
+      return (
+        <SbChild
+          item={element}
+          arrow={"arrow"}
+          key={`key-${index}`}
+          link={link[4]}
         />
       );
     }
-    return <SbChild item={element} active={""} key={`key-${index}`} />;
+    return <SbChild item={element} key={`key-${index}`} link={link[index]} />;
   });
 
   const botArr = botSbChild.map((element, index) => {
-    if (index === 0 || index === 1) {
+    if (index === 0) {
       return (
         <SbChild
           item={element}
-          active={""}
           arrow={"arrow"}
           key={`key-${index}`}
+          link={link[7]}
+        />
+      );
+    } else if (index === 1) {
+      return (
+        <SbChild
+          item={element}
+          arrow={"arrow"}
+          key={`key-${index}`}
+          link={link[8]}
         />
       );
     }
-    return <SbChild item={element} key={`key-${index}`} />;
+    return <SbChild item={element} key={`key-${index}`} link={link[9]} />;
   });
 
   return (

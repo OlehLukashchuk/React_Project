@@ -2,7 +2,6 @@ import React from "react";
 import Main from "./components/Main/main";
 import "../src/App.css";
 
-
 function App() {
   return <Main />;
 }
