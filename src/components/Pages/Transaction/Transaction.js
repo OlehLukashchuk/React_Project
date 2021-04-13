@@ -119,39 +119,53 @@ function Transaction() {
 //       .catch((error) => console.error(error));
 //   }
 //   render() {
-//     return (
-//       <div>
-//         <div className="transactionNeck">
-//           <div className="transactionNeck__left">
-//             <nav className="left__nav">
-//               <ol>
-//                 <li></li>
-//                 <li>Volt</li>
-//                 <li>Transactions</li>
-//               </ol>
-//             </nav>
-//             <h4>Transactions</h4>
-//             <p>Your web analytics dashboard template.</p>
+//     return(
+//     <div>
+//       {loading ? (
+//         <div>
+//           <div className="transactionNeck">
+//             <div className="transactionNeck__left">
+//               <nav className="left__nav">
+//                 <ol>
+//                   <li></li>
+//                   <li>Volt</li>
+//                   <li>Transactions</li>
+//                 </ol>
+//               </nav>
+//               <h4>Transactions</h4>
+//               <p>Your web analytics dashboard template.</p>
+//             </div>
+//             <div className="transactionNeck__right">
+//               <input type="button" value="Share" id="share"></input>
+//               <input type="button" value="Export" id="export"></input>
+//             </div>
 //           </div>
-//           <div className="transactionNeck__right">
-//             <input type="button" value="Share" id="share"></input>
-//             <input type="button" value="Export" id="export"></input>
+//           <div className="tableSettings">
+//             <Search class="largeContainer" inputSize="large" />
+//             <div className="settingsLogo"></div>
+//           </div>
+//           <div style={{ height: 400, width: "100%" }}>
+//             <DataGrid
+//               rows={books}
+//               columns={columns}
+//               pageSize={5}
+//               checkboxSelection
+//             />
 //           </div>
 //         </div>
-//         <div className="tableSettings">
-//           <Search class="largeContainer" inputSize="large" />
-//           <div className="settingsLogo"></div>
-//         </div>
-//         <div style={{ height: 400, width: "100%" }}>
-//           <DataGrid
-//             rows={this.state.books}
-//             columns={columns}
-//             pageSize={5}
-//             checkboxSelection
-//           />
-//         </div>
+//       ) :
+//       <div className="loader">
+//         <Loader
+//           type="ThreeDots"
+//           color="#00BFFF"
+//           height={100}
+//           width={100}
+//           timeout={5000} //3 secs
+//         />
 //       </div>
-//     );
+//       }
+//     </div>
+//   );
 //   }
 // }
 
