@@ -1,11 +1,11 @@
 import React from "react";
-import { Search } from "../Search/search";
+import Search from "../Search/search";
 import "../Header/header.css";
 
 function Header() {
   return (
     <header>
-      <Search class={"inputContainer"} inputSize={"small"} />
+      <Search class="inputContainer" inputSize="small" />
       <div className="rightHeader">
         <div className="bellLogo"></div>
         <div className="headerImg"></div>
@@ -15,11 +15,11 @@ function Header() {
   );
 }
 
-// class Header extends React.Component {
+// class Header extends React.PureComponent {
 //   render() {
 //     return (
 //       <header>
-//         <Search class={"inputContainer"} inputSize={"small"} />
+//         <Search class="inputContainer" inputSize="small" />
 //         <div className="rightHeader">
 //           <div className="bellLogo"></div>
 //           <div className="headerImg"></div>
@@ -30,4 +30,4 @@ function Header() {
 //   }
 // }
 
-export default Header;
+export default React.memo(Header);

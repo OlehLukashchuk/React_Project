@@ -27,10 +27,14 @@ ul {
   display: flex;
 }
 
-ul li {
+ul a {
   margin-right: 8px;
   padding: 0 8px;
   color: #262b40;
+}
+
+ul a:hover {
+  color: blue;
 }
 
 .footerSettings {
@@ -57,7 +61,7 @@ ul li {
   font-size: 18px;
 }
 
-.footerSettings:hover{
+.footerSettings:hover {
   cursor: pointer;
   background-color: lightgray;
 }

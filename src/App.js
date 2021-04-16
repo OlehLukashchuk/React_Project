@@ -1,14 +1,12 @@
-import React from 'react';
-import Main from './components/Main/main'
-import '../src/App.css'
+import React from "react";
+import Main from "./components/Main/main";
+import "../src/App.css";
 
 function App() {
-  return (
-    <Main/>
-  );
+  return <Main />;
 }
 
-// class App extends React.Component {
+// class App extends React.PureComponent {
 //   render() {
 //     return (
 //     <Main/>
@@ -16,4 +14,4 @@ function App() {
 //   }
 // }
 
-export default App;
+export default React.memo(App);
