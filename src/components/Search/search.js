@@ -14,7 +14,7 @@ function Search(props) {
   );
 }
 
-// class Seach extends React.PureComponent {
+// class Search extends React.PureComponent {
 //   render() {
 //     return (
 //       <div className={props.class}>

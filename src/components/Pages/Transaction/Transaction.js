@@ -4,16 +4,17 @@ import { DataGrid } from "@material-ui/data-grid";
 import Search from "../../Search/search";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-import "../Transaction/style.css"
+import "../Transaction/style.css";
+import Button from '../Transaction/Button'
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "Name", headerName: "Book Name", width: 130 },
-  { field: "Genre", headerName: "Book genre", width: 130 },
+  { field: "id", headerName: "ID", width: 130 },
+  { field: "Name", headerName: "Book Name", width: 160 },
+  { field: "Genre", headerName: "Book genre", width: 160 },
   {
     field: "Year",
     headerName: "Year",
     type: "number",
-    width: 90,
+    width: 120,
   },
   {
     field: "Author",
@@ -21,17 +22,16 @@ const columns = [
     width: 120,
   },
   {
-    field: "fullName",
-    headerName: "Full name",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue("firstName") || ""} ${
-        params.getValue("lastName") || ""
-      }`,
-  },
+    field: "",
+    headerName: "AddUser",
+    disableClickEventBubbling: true,
+    width: 150,
+    renderCell : () => {
+      return <Button ></Button>
+    }
+  }
 ];
+
 
 function Transaction() {
   const [books, setBooks] = React.useState([]);
@@ -45,6 +45,7 @@ function Transaction() {
         setLoading(true);
         snapshot.forEach((doc) => {
           const data = doc.data();
+          console.log(data)
           allBooks.push(data);
         });
         setBooks(allBooks);

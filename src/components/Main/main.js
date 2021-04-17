@@ -2,7 +2,7 @@ import React from "react";
 import SideBar from "../Side_Bar/sideBar";
 import Header from "../Header/header";
 import Volt from "../Pages/Volt/Volt";
-import Owerview from "../Pages/Owerview/Owerview";
+import overview from "../Pages/Owerview/Owerview";
 import Transaction from "../Pages/Transaction/Transaction";
 import Settings from "../Pages/SettingPage/Settings";
 import Table from "../Pages/Table/Table";
@@ -27,7 +27,7 @@ function Main(props) {
       <Header />
       <Switch>
         <Route exact history={history} path="/volt" component={Volt} />
-        <Route exact history={history} path="/Owerview" component={Owerview} />
+        <Route exact history={history} path="/overview" component={overview} />
         <Route exact history={history} path="/transactions" component={Transaction} />
         <Route exact history={history} path="/settings" component={Settings} />
         <Route exact history={history} path="/tables" component={Table} />

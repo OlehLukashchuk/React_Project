@@ -1,23 +1,29 @@
 import React from "react";
 import "../sideBar_child/sB_child.css";
-import { Link } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 function SbChild(props) {
   return (
-    <Link className={`SbChild ${props.active ? props.active : ''} ${props.arrow ? props.arrow : ''}`} to={props.link ? props.link : 'defaultLink'}>
+    <NavLink className={`SbChild ${props.arrow ? props.arrow : ''}`} to={{
+      pathname : props.link ? props.link : 'defaultLink',
+      search : '?key=value'
+    }}>
       <img src={props.item.icon} alt="someImg"></img>
       <span>{props.item.text}</span>
-    </Link>
+    </NavLink>
   );
 }
 
 // class SbChild extends React.PureComponent {
+//   constructor(props) {
+//    super(props);
+//   }
 //   render() {
 //     return (
-//       <div className={`SbChild ${props.active} ${props.arrow}`}>
-//         <img src={props.item.icon} alt="someImg"></img>
-//         <span>{props.item.text}</span>
-//       </div>
+//       <NavLink className={`SbChild ${this.props.arrow ? this.props.arrow : ''}`} to={this.props.link ? this.props.link : 'defaultLink'}>
+//         <img src={this.props.item.icon} alt="someImg"></img>
+//         <span>{this.props.item.text}</span>
+//       </NavLink>
 //     );
 //   }
 // }

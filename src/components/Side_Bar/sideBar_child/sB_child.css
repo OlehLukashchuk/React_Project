@@ -26,20 +26,10 @@
   background-color: #333353;
 }
 
-.activeSb {
-  width: 212px;
-  height: 46px;
-  padding: 10px;
-  display: flex;
-  color: white;
-  font-size: 1rem;
-  border: .0625rem solid transparent;
-  border-radius: 5px;
-  margin-bottom: .2rem;
+.active{
   border: .0625rem solid #727490;
   background-color: #333353;
 }
-
 .activeSb:hover {
   cursor: pointer;
 }
