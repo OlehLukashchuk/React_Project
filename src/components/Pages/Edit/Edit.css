@@ -1,0 +1,23 @@
+form {
+  height: 280px;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form input[type="text"] {
+  width: 350px;
+  height: 40px;
+  border: 1px solid #e5d6d6;
+  padding-left: 10px;
+}
+
+::placeholder{
+  color: gray;
+}
+
+form span{
+  font-size: 20px;
+}

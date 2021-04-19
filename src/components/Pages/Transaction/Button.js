@@ -1,13 +1,10 @@
 import React from "react";
-import '../Transaction/style.css'
+import "../Transaction/style.css";
+import { Link } from "react-router-dom";
 
-function Button(){
-  const onClick = () => {
-    console.log('hi')
-  }
-  return(
-    <button onClick={onClick}>Add</button>
-  )
+function Button(props) {
+  
+  return <Link  to={`/transactions/edit/${props.match}`}>Edit</Link>;
 }
 
-export default React.memo(Button)
+export default React.memo(Button);

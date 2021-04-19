@@ -3,6 +3,7 @@ import "../sideBar_child/sB_child.css";
 import {NavLink} from "react-router-dom";
 
 function SbChild(props) {
+  
   return (
     <NavLink className={`SbChild ${props.arrow ? props.arrow : ''}`} to={{
       pathname : props.link ? props.link : 'defaultLink',

@@ -28,16 +28,16 @@ function SideBar() {
     { icon: themesberg, text: "Themesberg" },
   ];
   const link = [
-    "volt",
-    "overview",
-    "transactions",
-    "settings",
-    "tables",
-    "examples",
-    "plugins",
-    "started",
-    "components",
-    "themesberg",
+    "/volt",
+    "/overview",
+    "/transactions",
+    "/settings",
+    "/tables",
+    "/examples",
+    "/plugins",
+    "/started",
+    "/components",
+    "/themesberg",
   ];
 
   const topArr = topSbChild.map((element, index) => {

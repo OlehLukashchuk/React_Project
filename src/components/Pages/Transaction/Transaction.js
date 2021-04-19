@@ -5,7 +5,7 @@ import Search from "../../Search/search";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import "../Transaction/style.css";
-import Button from '../Transaction/Button'
+import Button from "../Transaction/Button";
 const columns = [
   { field: "id", headerName: "ID", width: 130 },
   { field: "Name", headerName: "Book Name", width: 160 },
@@ -26,14 +26,13 @@ const columns = [
     headerName: "AddUser",
     disableClickEventBubbling: true,
     width: 150,
-    renderCell : () => {
-      return <Button ></Button>
-    }
-  }
+    renderCell: (props) => {
+      return <Button match = {props.id}></Button>;
+    },
+  },
 ];
 
-
-function Transaction() {
+function Transaction(){
   const [books, setBooks] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
@@ -45,7 +44,6 @@ function Transaction() {
         setLoading(true);
         snapshot.forEach((doc) => {
           const data = doc.data();
-          console.log(data)
           allBooks.push(data);
         });
         setBooks(allBooks);
@@ -87,17 +85,17 @@ function Transaction() {
             />
           </div>
         </div>
-      ) :
-      <div className="loader">
-        <Loader
-          type="ThreeDots"
-          color="#00BFFF"
-          height={100}
-          width={100}
-          timeout={5000} //3 secs
-        />
-      </div>
-      }
+      ) : (
+        <div className="loader">
+          <Loader
+            type="ThreeDots"
+            color="#00BFFF"
+            height={100}
+            width={100}
+            timeout={5000} //3 secs
+          />
+        </div>
+      )}
     </div>
   );
 }
