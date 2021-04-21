@@ -22,6 +22,7 @@ const About = React.lazy(() => import("../Pages/About/About"));
 const Blog = React.lazy(() => import("../Pages/Blog/Blog"));
 const Contact = React.lazy(() => import("../Pages/Contact/Contact"));
 const Themes = React.lazy(() => import("../Pages/ThemesPage/Themes"));
+const Error = React.lazy(() => import("../Pages/404/404"));
 // const Edit = React.lazy(() => import("../Pages/Edit/Edit"));
 
 function Main(props) {
@@ -352,7 +353,21 @@ function Main(props) {
             </Suspense>
           )}
         />
-        <Route path="*">Not Found</Route>
+        <Route path="*" render={() => (
+            <Suspense
+              fallback={
+                <Loader
+                  type="ThreeDots"
+                  color="#00BFFF"
+                  height={100}
+                  width={100}
+                  timeout={5000}
+                />
+              }
+            >
+              <Error />
+            </Suspense>
+          )}></Route>
       </Switch>
       <Footer />
     </main>

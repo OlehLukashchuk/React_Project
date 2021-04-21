@@ -3,11 +3,11 @@ import "../sideBar_child/sB_child.css";
 import {NavLink} from "react-router-dom";
 
 function SbChild(props) {
-  
+
   return (
     <NavLink className={`SbChild ${props.arrow ? props.arrow : ''}`} to={{
       pathname : props.link ? props.link : 'defaultLink',
-      search : '?key=value'
+      // search : '?key=value'
     }}>
       <img src={props.item.icon} alt="someImg"></img>
       <span>{props.item.text}</span>
