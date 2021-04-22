@@ -5,11 +5,11 @@ import "../Main/main.css";
 import Footer from "../Footer/footer";
 import { Route, Switch } from "react-router-dom";
 import Loader from "react-loader-spinner";
-import Edit from '../Pages/Edit/Edit';
+// import Edit from "../Pages/Edit/Edit";
 const Volt = React.lazy(() => import("../Pages/Volt/Volt"));
 const Overview = React.lazy(() => import("../Pages/Overview/Overview"));
-const Transaction = React.lazy(() =>
-  import("../Pages/Transaction/Transaction")
+const Book = React.lazy(() =>
+  import("../Pages/Book/Book")
 );
 const Settings = React.lazy(() => import("../Pages/SettingPage/Settings"));
 const Table = React.lazy(() => import("../Pages/Table/Table"));
@@ -23,7 +23,19 @@ const Blog = React.lazy(() => import("../Pages/Blog/Blog"));
 const Contact = React.lazy(() => import("../Pages/Contact/Contact"));
 const Themes = React.lazy(() => import("../Pages/ThemesPage/Themes"));
 const Error = React.lazy(() => import("../Pages/404/404"));
-// const Edit = React.lazy(() => import("../Pages/Edit/Edit"));
+const Edit = React.lazy(() => import("../Pages/Edit/Edit"));
+
+const toPage = function (props, Page) {
+  return (
+    <Suspense
+      fallback={
+        <Loader type="ThreeDots" color="brown" height={100} width={100} className ="loader"/>
+      }
+    >
+      <Page {...props} />
+    </Suspense>
+  );
+};
 
 function Main(props) {
   const { history } = props;
@@ -36,338 +48,102 @@ function Main(props) {
           exact
           history={history}
           path="/"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Volt />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Volt)}
         />
         <Route
           exact
           history={history}
           path="/volt"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Volt />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Volt)}
         />
         <Route
           exact
           history={history}
           path="/overview"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Overview />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Overview)}
         />
         <Route
           exact
           history={history}
-          path="/transactions"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Transaction />
-            </Suspense>
-          )}
+          path="/books"
+          render={(props) => toPage(props, Book)}
         />
         <Route
           exact
           history={history}
-          path="/transactions/edit/:id"
-          component= {Edit}
-          // render={() => (
-          //   <Suspense
-          //     fallback={
-          //       <Loader
-          //         type="ThreeDots"
-          //         color="#00BFFF"
-          //         height={100}
-          //         width={100}
-          //         timeout={5000}
-          //       />
-          //     }
-          //   >
-          //     <Edit />
-          //   </Suspense>
-          // )}
+          path="/books/edit/:id"
+          render={(props) => toPage(props, Edit)}
         />
         <Route
           exact
           history={history}
           path="/settings"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Settings />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Settings)}
         />
         <Route
           exact
           history={history}
           path="/tables"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Table />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Table)}
         />
         <Route
           exact
           history={history}
           path="/examples"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Example />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Example)}
         />
         <Route
           exact
           history={history}
           path="/plugins"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Plugin />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Plugin)}
         />
         <Route
           exact
           history={history}
           path="/started"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Started />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Started)}
         />
         <Route
           exact
           history={history}
           path="/components"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Component />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Component)}
         />
         <Route
           exact
           history={history}
           path="/themesberg"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Themesberg />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Themesberg)}
         />
         <Route
           exact
           history={history}
           path="/About"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <About />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, About)}
         />
         <Route
           exact
           history={history}
           path="/Blog"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Blog />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Blog)}
         />
         <Route
           exact
           history={history}
           path="/Contact"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Contact />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Contact)}
         />
         <Route
           exact
           history={history}
           path="/Themes"
-          render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Themes />
-            </Suspense>
-          )}
+          render={(props) => toPage(props, Themes)}
         />
-        <Route path="*" render={() => (
-            <Suspense
-              fallback={
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={5000}
-                />
-              }
-            >
-              <Error />
-            </Suspense>
-          )}></Route>
+        <Route
+          path="*"
+          render={(props) => toPage(props, Error)}
+        ></Route>
       </Switch>
       <Footer />
     </main>

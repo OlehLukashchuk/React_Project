@@ -15,7 +15,7 @@ function SideBar() {
   const topSbChild = [
     { icon: logo, text: "Volt React" },
     { icon: overview, text: "Overview" },
-    { icon: transaction, text: "Transactions" },
+    { icon: transaction, text: "Books" },
     { icon: setting, text: "Settings" },
     { icon: table, text: "Tables" },
     { icon: file, text: "Page Examples" },
@@ -30,7 +30,7 @@ function SideBar() {
   const link = [
     "/volt",
     "/overview",
-    "/transactions",
+    "/books",
     "/settings",
     "/tables",
     "/examples",

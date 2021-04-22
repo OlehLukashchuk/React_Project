@@ -4,8 +4,8 @@ import { DataGrid } from "@material-ui/data-grid";
 import Search from "../../Search/search";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-import "../Transaction/style.css";
-import Button from "../Transaction/Button";
+import "../Book/style.css";
+import Button from "./Button";
 const columns = [
   { field: "id", headerName: "ID", width: 130 },
   { field: "Name", headerName: "Book Name", width: 160 },
@@ -23,16 +23,16 @@ const columns = [
   },
   {
     field: "",
-    headerName: "AddUser",
+    headerName: "Edit Book",
     disableClickEventBubbling: true,
     width: 150,
     renderCell: (props) => {
-      return <Button match = {props.id}></Button>;
+      return <Button match={props.id}></Button>;
     },
   },
 ];
 
-function Transaction(){
+function Book() {
   const [books, setBooks] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
@@ -89,10 +89,10 @@ function Transaction(){
         <div className="loader">
           <Loader
             type="ThreeDots"
-            color="#00BFFF"
+            color="brown"
             height={100}
             width={100}
-            timeout={5000} //3 secs
+            //3 secs
           />
         </div>
       )}
@@ -100,7 +100,7 @@ function Transaction(){
   );
 }
 
-// class Transaction extends React.PureComponent {
+// class Book extends React.PureComponent {
 //   state = {
 //     books: [],
 //   };
@@ -159,7 +159,7 @@ function Transaction(){
 //           color="#00BFFF"
 //           height={100}
 //           width={100}
-//           timeout={5000} //3 secs
+//            //3 secs
 //         />
 //       </div>
 //       }
@@ -168,4 +168,4 @@ function Transaction(){
 //   }
 // }
 
-export default React.memo(Transaction);
+export default React.memo(Book);

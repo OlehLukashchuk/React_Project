@@ -1,10 +1,10 @@
 import React from "react";
-import "../Transaction/style.css";
+import "../Book/style.css";
 import { Link } from "react-router-dom";
 
 function Button(props) {
-  
-  return <Link  to={`/transactions/edit/${props.match}`}>Edit</Link>;
+
+  return <Link  to={`/books/edit/${props.match}`}></Link>;
 }
 
 export default React.memo(Button);
