@@ -2,7 +2,7 @@ import React from "react";
 import "../Edit/Edit.css";
 import { db, auth } from "../Book/firebase-config";
 import Loader from "react-loader-spinner";
-
+import { useHistory } from "react-router-dom";
 function Edit(props) {
   const [book, setBook] = React.useState({});
   const [loading, setLoading] = React.useState(false);
@@ -10,29 +10,42 @@ function Edit(props) {
   const editUser = (event, keyName) => {
     setBook({ ...book, [keyName]: event.target.value });
   };
-
+  let history = useHistory();
   React.useEffect(() => {
-    const bookId = props.match.url.charAt(props.match.url.length - 1);
+    const bookId = props.match.url.slice(12, props.match.length);
     let bookTemplate = {};
     setLoading(true);
     db.collection("books")
       .doc(bookId)
       .get()
       .then((snapshot) => {
-        const data = snapshot.data();
-        bookTemplate = data;
-        setBook(bookTemplate);
-        setLoading(false);
-        setOpacity(1);
+        if (snapshot.exists) {
+          const data = snapshot.data();
+          bookTemplate = data;
+          setBook(bookTemplate);
+          setLoading(false);
+          setOpacity(1);
+        }
+        else{
+          setTimeout(() =>{
+            history.push("/Error");
+          },2000)
+        }
       })
       .catch((err) => console.error(err));
   }, []);
 
   return (
-    <div className="bg" style ={{opacity:opacity,backgroundImage:`url('${book.BgImage}')`}}>
+    <div
+      className="bg"
+      style={{ opacity: opacity, backgroundImage: `url('${book.BgImage}')` }}
+    >
       {!loading ? (
         <div className="editContainer">
-          <div className="poster" style ={{backgroundImage:`url('${book.posterImage}')`}}></div>
+          <div
+            className="poster"
+            style={{ backgroundImage: `url('${book.posterImage}')` }}
+          ></div>
           <form>
             <div className="editContainer_child">
               <span>Name</span>
@@ -69,11 +82,20 @@ function Edit(props) {
               ></input>
             </div>
           </form>
-          <div className="shadowBox" style={{backgroundColor:book.shadow}}></div>
+          <div
+            className="shadowBox"
+            style={{ backgroundColor: book.shadow }}
+          ></div>
         </div>
       ) : (
         <div className="loader">
-          <Loader type="ThreeDots" color="brown" height={100} width={100} className="loader"/>
+          <Loader
+            type="ThreeDots"
+            color="brown"
+            height={100}
+            width={100}
+            className="loader"
+          />
         </div>
       )}
     </div>

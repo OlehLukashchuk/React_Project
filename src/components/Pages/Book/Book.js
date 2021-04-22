@@ -92,7 +92,6 @@ function Book() {
             color="brown"
             height={100}
             width={100}
-            //3 secs
           />
         </div>
       )}
