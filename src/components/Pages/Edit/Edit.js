@@ -6,8 +6,7 @@ import Loader from "react-loader-spinner";
 function Edit(props) {
   const [book, setBook] = React.useState({});
   const [loading, setLoading] = React.useState(false);
-  const [opacity, setOpacity] = React.useState(0);
-  const [bgImage,setBgImage] = React.useState('');
+  const [opacity, setOpacity] = React.useState(1);
   const editUser = (event, keyName) => {
     setBook({ ...book, [keyName]: event.target.value });
   };
@@ -24,7 +23,7 @@ function Edit(props) {
         bookTemplate = data;
         setBook(bookTemplate);
         setLoading(false);
-        setOpacity(1)
+        setOpacity(1);
       })
       .catch((err) => console.error(err));
   }, []);
@@ -70,6 +69,7 @@ function Edit(props) {
               ></input>
             </div>
           </form>
+          <div className="shadowBox" style={{backgroundColor:book.shadow}}></div>
         </div>
       ) : (
         <div className="loader">

@@ -5,11 +5,15 @@
 
 .bg {
   height: 600px;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: -130px;
+  background-position-y: -1030px;
   margin-top: 10px;
   transition: opacity 2s ease;
+  animation-name: showBgImage;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 form {
@@ -22,6 +26,12 @@ form {
   align-items: start;
   justify-content: space-between;
   color: white;
+  opacity: 0;
+  animation-name: showDescription;
+  animation-duration: 5s;
+  animation-delay:3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 form input[type="text"] {
@@ -56,22 +66,19 @@ form span {
   padding: 50px;
 }
 
-
-
 .poster {
   height: 430px;
   width: 290px;
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: 0px 0px 12px 1px gray;
-}
-
-.poster{
-  cursor: pointer;
+  opacity: 0;
   animation-name: imgAnimation;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
 }
 
 .editContainer_child {
@@ -86,18 +93,46 @@ form span {
   justify-content: center;
 }
 
-@keyframes imgAnimation {
+.shadowBox {
+  position: absolute;
+  top: 0;
+  left: 260px;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  animation-name: shadowAni;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
-  50% {
-    opacity: 0;
-  }
+}
 
+@keyframes showDescription {
   100% {
     opacity: 1;
   }
 }
 
-@keyframes showContent {
-  100%{ opacity:1;
+@keyframes showBgImage {
+  100% {
+    background-position-y: -130px;
+  }
+}
+
+@keyframes shadowAni {
+
+  100% {
+    opacity: 1;
+
+  }
+}
+
+
+@keyframes imgAnimation {
+
+  100% {
+    opacity: 1;
   }
 }
