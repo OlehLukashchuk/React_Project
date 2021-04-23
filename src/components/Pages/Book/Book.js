@@ -38,22 +38,23 @@ function Book() {
 
   React.useEffect(() => {
     const allBooks = [];
+    setLoading(true);
     db.collection("books")
       .get()
       .then((snapshot) => {
-        setLoading(true);
         snapshot.forEach((doc) => {
           const data = doc.data();
           allBooks.push(data);
         });
         setBooks(allBooks);
+        setLoading(false);
       })
       .catch((error) => console.error(error));
   }, []);
 
   return (
     <div>
-      {loading ? (
+      {!loading ? (
         <div>
           <div className="transactionNeck">
             <div className="transactionNeck__left">

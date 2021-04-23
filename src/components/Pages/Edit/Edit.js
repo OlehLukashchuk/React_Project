@@ -23,9 +23,7 @@ function Edit(props) {
       Year: book.Year,
       Genre: book.Genre,
     })
-    .then(() => {
-      history.push("/books")
-    })
+
   };
 
 
@@ -39,7 +37,8 @@ function Edit(props) {
       .then((snapshot) => {
         if (snapshot.exists) {
           const data = snapshot.data();
-          bookTemplate = data;
+          bookTemplate = {...data};
+          console.log(bookTemplate)
           setBook(bookTemplate);
           setLoading(false);
           setOpacity(1);
@@ -98,7 +97,7 @@ function Edit(props) {
                 onChange={(event) => editBook(event, "Author")}
               ></input>
             </div>
-            <Link className="saveBtn" onClick={saveChanges}>
+            <Link className="saveBtn" onClick={saveChanges} to='/books'>
               Save
             </Link>
           </form>
