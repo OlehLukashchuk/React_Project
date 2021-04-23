@@ -38,7 +38,6 @@ function Edit(props) {
         if (snapshot.exists) {
           const data = snapshot.data();
           bookTemplate = {...data};
-          console.log(bookTemplate)
           setBook(bookTemplate);
           setLoading(false);
           setOpacity(1);
