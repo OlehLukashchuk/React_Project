@@ -3,14 +3,32 @@ import "../Edit/Edit.css";
 import { db, auth } from "../Book/firebase-config";
 import Loader from "react-loader-spinner";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 function Edit(props) {
   const [book, setBook] = React.useState({});
   const [loading, setLoading] = React.useState(false);
   const [opacity, setOpacity] = React.useState(1);
-  const editUser = (event, keyName) => {
+  let history = useHistory();
+
+  const editBook = (event, keyName) => {
     setBook({ ...book, [keyName]: event.target.value });
   };
-  let history = useHistory();
+  const saveChanges = () => {
+    const bookId = props.match.url.slice(12, props.match.length);
+
+    db.collection("books").doc(bookId).update({
+      Name: book.Name,
+      Author: book.Author,
+      Year: book.Year,
+      Genre: book.Genre,
+    })
+    .then(() => {
+      history.push("/books")
+    })
+  };
+
+
   React.useEffect(() => {
     const bookId = props.match.url.slice(12, props.match.length);
     let bookTemplate = {};
@@ -25,11 +43,10 @@ function Edit(props) {
           setBook(bookTemplate);
           setLoading(false);
           setOpacity(1);
-        }
-        else{
-          setTimeout(() =>{
+        } else {
+          setTimeout(() => {
             history.push("/Error");
-          },2000)
+          }, 2000);
         }
       })
       .catch((err) => console.error(err));
@@ -52,7 +69,7 @@ function Edit(props) {
               <input
                 type="text"
                 value={book.Name}
-                onChange={(event) => editUser(event, "Name")}
+                onChange={(event) => editBook(event, "Name")}
               ></input>
             </div>
             <div className="editContainer_child">
@@ -61,7 +78,7 @@ function Edit(props) {
               <input
                 type="text"
                 value={book.Genre}
-                onChange={(event) => editUser(event, "Genre")}
+                onChange={(event) => editBook(event, "Genre")}
               ></input>
             </div>
             <div className="editContainer_child">
@@ -70,7 +87,7 @@ function Edit(props) {
               <input
                 type="text"
                 value={book.Year}
-                onChange={(event) => editUser(event, "Year")}
+                onChange={(event) => editBook(event, "Year")}
               ></input>
             </div>
             <div className="editContainer_child">
@@ -78,9 +95,12 @@ function Edit(props) {
               <input
                 type="text"
                 value={book.Author}
-                onChange={(event) => editUser(event, "Author")}
+                onChange={(event) => editBook(event, "Author")}
               ></input>
             </div>
+            <Link className="saveBtn" onClick={saveChanges}>
+              Save
+            </Link>
           </form>
           <div
             className="shadowBox"
