@@ -9,7 +9,7 @@ function Header() {
       <div className="rightHeader">
         <div className="bellLogo"></div>
         <div className="headerImg"></div>
-        <span>Bonnie Green</span>
+        <span>Oleh Lukashchuk</span>
       </div>
     </header>
   );

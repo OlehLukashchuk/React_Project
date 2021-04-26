@@ -148,3 +148,8 @@ p {
   background-repeat: no-repeat;
   margin-top: 5px;
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+}

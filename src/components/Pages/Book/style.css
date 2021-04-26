@@ -1,0 +1,69 @@
+.loader {
+  display: flex;
+  justify-content: center;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cellLeft a {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-image: url('../Book/Book_img//iconfinder_document_text_edit_103514.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position-x: 7px;
+  background-position-y: 6px;
+  box-shadow: 0px 0px 3px 0px black;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cellLeft a:hover {
+  opacity: 0.5;
+}
+
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCellRight .MuiDataGrid-colCellTitleContainer {
+  justify-content: start;
+  padding-left: 8px;
+}
+
+.MuiDataGrid-root .MuiDataGrid-colCellTitleContainer {
+  justify-content: start;
+}
+
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
+  text-align: start;
+  justify-content: start;
+  outline: none;
+}
+
+.MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellRight {
+  text-align: center;
+}
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCell:focus, .MuiDataGrid-root .MuiDataGrid-cell:focus {
+  outline: none;
+}
+.MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
+  text-align: start;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cellLeft a:active {
+  transform: scale(.9);
+
+}
+
+.MuiDataGrid-root .MuiDataGrid-cellLeft a:hover {
+  cursor: pointer;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cellWithRenderer {
+  justify-content: center;
+}
+
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCellMoving {
+  background-color: transparent;
+}

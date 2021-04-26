@@ -1,0 +1,202 @@
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url('../../Fonts/Roboto-Medium.ttf')
+}
+
+.bg {
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -1030px;
+  margin-top: 10px;
+  transition: opacity 2s ease;
+  animation-name: showBgImage;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+form {
+  width: 70%;
+  height: 375px;
+  margin-top: 26px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  color: white;
+  opacity: 0;
+  animation-name: showDescription;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+form input[type="text"] {
+  width: 0px;
+  height: 40px;
+  background: transparent;
+  color: white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid white;
+  padding-left: 10px;
+  border-radius: 0px;
+  font-family: 'Roboto-Medium';
+  font-size: 20px;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+  animation-name: inputsAni;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+::placeholder {
+  color: gray;
+}
+
+form span {
+  font-size: 25px;
+  text-shadow: 0px 0px 5px black;
+  font-family: 'Roboto-Medium';
+}
+
+.editContainer {
+  display: flex;
+  padding: 50px;
+}
+
+.poster {
+  height: 430px;
+  width: 290px;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation-name: imgAnimation;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+}
+
+.editContainer_child {
+  width: 530px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+}
+
+.shadowBox {
+  position: absolute;
+  top: 0;
+  left: 260px;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  animation-name: shadowAni;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+}
+
+.saveBtn {
+  height: 35px;
+  width: 150px;
+  position: absolute;
+  bottom: 330px;
+  right: 28%;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  transition: background 2s ease;
+  text-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 5px 1px black;
+  opacity: 0;
+  animation-name: btnAni;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.saveBtn:hover {
+  cursor: pointer;
+}
+
+.saveBtn:active {
+  transform: scale(0.9)
+}
+
+@keyframes glow {
+  0% {
+    background-color: transparent;
+  }
+
+  50% {
+    background-color: black
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes btnAni {
+  100% {
+    opacity: 1;
+    right: 42%;
+  }
+}
+
+@keyframes inputsAni {
+  100% {
+    width: 350px;
+  }
+}
+
+@keyframes showDescription {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showBgImage {
+  100% {
+    background-position-y: -130px;
+  }
+}
+
+@keyframes shadowAni {
+
+  100% {
+    opacity: 1;
+
+  }
+}
+
+
+@keyframes imgAnimation {
+
+  100% {
+    opacity: 1;
+  }
+}

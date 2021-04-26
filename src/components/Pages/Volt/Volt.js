@@ -1,6 +1,6 @@
 import React from "react";
 
-function Volt(){
+function Volt(props){
   return(
     <h1>Volt</h1>
   )

@@ -4,16 +4,17 @@ import { DataGrid } from "@material-ui/data-grid";
 import Search from "../../Search/search";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-import "../Transaction/style.css"
+import "../Book/style.css";
+import Button from "./Button";
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "Name", headerName: "Book Name", width: 130 },
-  { field: "Genre", headerName: "Book genre", width: 130 },
+  { field: "id", headerName: "ID", width: 130 },
+  { field: "Name", headerName: "Book Name", width: 160 },
+  { field: "Genre", headerName: "Book genre", width: 160 },
   {
     field: "Year",
     headerName: "Year",
     type: "number",
-    width: 90,
+    width: 120,
   },
   {
     field: "Author",
@@ -21,40 +22,39 @@ const columns = [
     width: 120,
   },
   {
-    field: "fullName",
-    headerName: "Full name",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue("firstName") || ""} ${
-        params.getValue("lastName") || ""
-      }`,
+    field: "",
+    headerName: "Edit Book",
+    disableClickEventBubbling: true,
+    width: 150,
+    renderCell: (props) => {
+      return <Button match={props.id}></Button>;
+    },
   },
 ];
 
-function Transaction() {
+function Book() {
   const [books, setBooks] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     const allBooks = [];
+    setLoading(true);
     db.collection("books")
       .get()
       .then((snapshot) => {
-        setLoading(true);
         snapshot.forEach((doc) => {
           const data = doc.data();
           allBooks.push(data);
         });
         setBooks(allBooks);
+        setLoading(false);
       })
       .catch((error) => console.error(error));
   }, []);
 
   return (
     <div>
-      {loading ? (
+      {!loading ? (
         <div>
           <div className="transactionNeck">
             <div className="transactionNeck__left">
@@ -86,22 +86,21 @@ function Transaction() {
             />
           </div>
         </div>
-      ) :
-      <div className="loader">
-        <Loader
-          type="ThreeDots"
-          color="#00BFFF"
-          height={100}
-          width={100}
-          timeout={5000} //3 secs
-        />
-      </div>
-      }
+      ) : (
+        <div className="loader">
+          <Loader
+            type="ThreeDots"
+            color="brown"
+            height={100}
+            width={100}
+          />
+        </div>
+      )}
     </div>
   );
 }
 
-// class Transaction extends React.PureComponent {
+// class Book extends React.PureComponent {
 //   state = {
 //     books: [],
 //   };
@@ -160,7 +159,7 @@ function Transaction() {
 //           color="#00BFFF"
 //           height={100}
 //           width={100}
-//           timeout={5000} //3 secs
+//            //3 secs
 //         />
 //       </div>
 //       }
@@ -169,4 +168,4 @@ function Transaction() {
 //   }
 // }
 
-export default React.memo(Transaction);
+export default React.memo(Book);
