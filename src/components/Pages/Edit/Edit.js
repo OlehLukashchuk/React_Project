@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 function Edit(props) {
   const [book, setBook] = React.useState({});
   const [loading, setLoading] = React.useState(false);
-  // const [opacity, setOpacity] = React.useState(1);
   let history = useHistory();
 
   const editBook = (event, keyName) => {

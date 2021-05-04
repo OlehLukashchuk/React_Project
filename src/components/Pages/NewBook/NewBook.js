@@ -3,19 +3,17 @@ import "../Edit/Edit.css";
 import "../NewBook/NewBook.css";
 import { NavLink } from "react-router-dom";
 import { db } from "../Book/firebase-config";
-import { useHistory } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 function NewBook(props) {
   useSelector((state) => state);
   const dispatch = useDispatch();
-  const history = useHistory();
   const [changedValue, setValue] = React.useState({
     Name: "",
     Genre: "",
     Author: "",
     Year: "",
-    BgImage : "https://cdn.wallpapersafari.com/82/30/IFn1K7.jpg",
+    BgImage: "https://cdn.wallpapersafari.com/82/30/IFn1K7.jpg",
     id: 4,
   });
 
