@@ -1,11 +1,13 @@
 import * as React from "react";
-import { db, auth } from "./firebase-config";
+import { db } from "./firebase-config";
 import { DataGrid } from "@material-ui/data-grid";
 import Search from "../../Search/search";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import "../Book/style.css";
 import Button from "./Button";
+import { NavLink } from "react-router-dom";
+
 const columns = [
   { field: "id", headerName: "ID", width: 130 },
   { field: "Name", headerName: "Book Name", width: 160 },
@@ -39,6 +41,7 @@ function Book() {
   React.useEffect(() => {
     const allBooks = [];
     setLoading(true);
+
     db.collection("books")
       .get()
       .then((snapshot) => {
@@ -46,6 +49,7 @@ function Book() {
           const data = doc.data();
           allBooks.push(data);
         });
+
         setBooks(allBooks);
         setLoading(false);
       })
@@ -62,10 +66,10 @@ function Book() {
                 <ol>
                   <li></li>
                   <li>Volt</li>
-                  <li>Transactions</li>
+                  <li>Books</li>
                 </ol>
               </nav>
-              <h4>Transactions</h4>
+              <h4>Books</h4>
               <p>Your web analytics dashboard template.</p>
             </div>
             <div className="transactionNeck__right">
@@ -75,6 +79,9 @@ function Book() {
           </div>
           <div className="tableSettings">
             <Search class="largeContainer" inputSize="large" />
+            <NavLink className="addBook" to={{ pathname: "newBook" }}>
+              Add Book
+            </NavLink>
             <div className="settingsLogo"></div>
           </div>
           <div style={{ height: 400, width: "100%" }}>
@@ -88,12 +95,7 @@ function Book() {
         </div>
       ) : (
         <div className="loader">
-          <Loader
-            type="ThreeDots"
-            color="brown"
-            height={100}
-            width={100}
-          />
+          <Loader type="ThreeDots" color="brown" height={100} width={100} />
         </div>
       )}
     </div>

@@ -3,6 +3,37 @@
   justify-content: center;
 }
 
+ol li:last-child {
+
+  text-align: center;
+
+}
+
+.addBook {
+  height: 42px;
+  width: 78px;
+  position: absolute;
+  left: 600px;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: transparent;
+  box-shadow: 0px 0px 4px 0px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: black;
+}
+
+.addBook:hover {
+  cursor: pointer;
+}
+
+.addBook:active {
+  transform: scale(0.9);
+}
+
 .MuiDataGrid-root .MuiDataGrid-cellLeft a {
   width: 30px;
   height: 30px;
@@ -44,9 +75,12 @@
 .MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellRight {
   text-align: center;
 }
-.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCell:focus, .MuiDataGrid-root .MuiDataGrid-cell:focus {
+
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCell:focus,
+.MuiDataGrid-root .MuiDataGrid-cell:focus {
   outline: none;
 }
+
 .MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
   text-align: start;
 }

@@ -430,6 +430,13 @@
 .btnSendMessage:hover {
   cursor: pointer;
 }
+.btnConnect:active {
+  transform: scale(0.9);
+}
+
+.btnSendMessage:active {
+  transform: scale(0.9);
+}
 
 .btnConnect:focus {
   box-shadow: inset 0 1px 0 hsl(0deg 0% 100% / 15%), 0 1px 1px rgb(46 54 80 / 8%), 0 0 0 0.2rem rgb(71 75 93 / 50%);

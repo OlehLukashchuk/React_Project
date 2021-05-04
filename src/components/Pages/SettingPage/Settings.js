@@ -1,8 +1,19 @@
 import React from "react";
 import "../SettingPage/setting.css";
 import DatePicker from "./DatePicker/date";
+import { useSelector, useDispatch } from "react-redux";
 
 function Settings() {
+  const state = useSelector((state) => state);
+
+  const dispatch = useDispatch();
+
+  function changeValue() {
+    dispatch({type : 'increment' , value : 1})
+    dispatch({type : 'increments' , value : 'Hello World'})
+  }
+  console.log(state);
+
   return (
     <div>
       <div className="settings_neck">
@@ -69,7 +80,9 @@ function Settings() {
               <input type="text" placeholder="ZIP"></input>
             </div>
           </form>
-          <button className="saveBtn">Save All</button>
+          <button className="saveBtn" onClick={changeValue}>
+            Save All
+          </button>
         </div>
         <div className="settingsMain_rightContent">
           <div className="rightContent_Profile">

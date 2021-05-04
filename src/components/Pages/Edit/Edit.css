@@ -7,34 +7,34 @@
   height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: -1030px;
+  /* background-position-y: -1030px; */
   margin-top: 10px;
-  transition: opacity 2s ease;
+  opacity: 0;
   animation-name: showBgImage;
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-form {
+.editContainer form {
   width: 70%;
   height: 375px;
   margin-top: 26px;
   margin-left: 50px;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   color: white;
   opacity: 0;
   animation-name: showDescription;
-  animation-duration: 5s;
-  animation-delay: 3s;
+  animation-duration: 4s;
+  animation-delay: 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-form input[type="text"] {
+.editContainer  form input[type="text"] {
   width: 0px;
   height: 40px;
   background: transparent;
@@ -51,7 +51,7 @@ form input[type="text"] {
   text-shadow: 0px 0px 5px black;
   animation-name: inputsAni;
   animation-duration: 3s;
-  animation-delay: 3s;
+  animation-delay: 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -60,7 +60,7 @@ form input[type="text"] {
   color: gray;
 }
 
-form span {
+.editContainer  form span {
   font-size: 25px;
   text-shadow: 0px 0px 5px black;
   font-family: 'Roboto-Medium';
@@ -79,8 +79,8 @@ form span {
   background-repeat: no-repeat;
   opacity: 0;
   animation-name: imgAnimation;
-  animation-duration: 5s;
-  animation-delay: 3s;
+  animation-duration: 4s;
+  animation-delay: 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 
@@ -98,7 +98,7 @@ form span {
   justify-content: center;
 }
 
-.shadowBox {
+/* .shadowBox {
   position: absolute;
   top: 0;
   left: 260px;
@@ -112,9 +112,9 @@ form span {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 
-}
+} */
 
-.saveBtn {
+.editContainer  form .saveBtn {
   height: 35px;
   width: 150px;
   position: absolute;
@@ -133,7 +133,7 @@ form span {
   opacity: 0;
   animation-name: btnAni;
   animation-duration: 3s;
-  animation-delay: 3s;
+  animation-delay: 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -181,7 +181,7 @@ form span {
 
 @keyframes showBgImage {
   100% {
-    background-position-y: -130px;
+    opacity: 1;
   }
 }
 

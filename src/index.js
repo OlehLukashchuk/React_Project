@@ -4,15 +4,25 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import {createBrowserHistory} from 'history';
+import { createBrowserHistory } from "history";
+import { Provider } from "react-redux";
+import  AddBook  from "./Reducer";
+import { createStore } from "redux";
+import { combineReducers } from "redux";
 
+const store = createStore(
+  combineReducers({
+    addBook: AddBook,
+  })
+);
 const history = createBrowserHistory();
 
 ReactDOM.render(
-
-  <BrowserRouter history={history}>
-    <App />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter history={history}>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
 
