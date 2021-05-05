@@ -24,6 +24,7 @@ const Contact = React.lazy(() => import("../Pages/Contact/Contact"));
 const Themes = React.lazy(() => import("../Pages/ThemesPage/Themes"));
 const Error = React.lazy(() => import("../Pages/404/404"));
 const Edit = React.lazy(() => import("../Pages/Edit/Edit"));
+const NewBook = React.lazy(() => import("../Pages/NewBook/NewBook"));
 
 const toPage = function (props, Page) {
   return (
@@ -73,6 +74,12 @@ function Main(props) {
           history={history}
           path="/books/edit/:id"
           render={(props) => toPage(props, Edit)}
+        />
+        <Route
+          exact
+          history={history}
+          path="/newBook"
+          render={(props) => toPage(props, NewBook)}
         />
         <Route
           exact
