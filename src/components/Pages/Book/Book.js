@@ -7,6 +7,26 @@ import Loader from "react-loader-spinner";
 import "../Book/style.css";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
+import jwt_decode from "jwt-decode";
+const jwt = require("jsonwebtoken");
+
+const expiredToken =
+  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MjA2NDA5MzAsImV4cCI6MTYyMDY0MDkzMCwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk1hbmFnZXIiLCJQcm9qZWN0IEFkbWluaXN0cmF0b3IiXX0.4tomNwsF0-hdPbS-jNfbyeb6hk7uApTgZl3r3rWof-g";
+
+const notExpiredToken =
+  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MjA2NDA5MzAsImV4cCI6MTY1MjE3NjkzMCwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk1hbmFnZXIiLCJQcm9qZWN0IEFkbWluaXN0cmF0b3IiXX0.WkqMdmSYTmckK6w1lqM_1026PE0935aVdfuPnHb8-mE";
+
+const decodeExpired = jwt_decode(expiredToken);
+const decodeGoodOne = jwt_decode(notExpiredToken);
+
+const signExpired = jwt.sign(decodeExpired, "expired");
+const signGoodOne = jwt.sign(decodeGoodOne, "not-expired");
+
+jwt.verify(signExpired, "expired", (err) => console.log(err));
+jwt.verify(signGoodOne, "not-expired", function (err, decodeGoodOne) {
+  if (err) console.log(err);
+  else console.log(decodeGoodOne);
+});
 
 const columns = [
   { field: "id", headerName: "ID", width: 130 },

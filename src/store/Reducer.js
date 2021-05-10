@@ -1,13 +1,17 @@
 function AddBook(
   state = {
-    value: {},
+    value: {
+      Name: '',
+      Genre: '',
+      Year: '',
+      Author: '',
+    },
   },
   action
 ) {
   switch (action.type) {
-    case "newBook":
+    case "NewBook":
       return { value: action.value };
-
     default:
       return state;
   }

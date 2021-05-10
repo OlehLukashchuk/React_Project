@@ -6,14 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { Provider } from "react-redux";
-import  AddBook  from "./Reducer";
+import AddBook from "./store/Reducer";
 import { createStore } from "redux";
-import { combineReducers } from "redux";
+import { combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
 const store = createStore(
   combineReducers({
     addBook: AddBook,
-  })
+  }),
+  applyMiddleware(thunk)
 );
 const history = createBrowserHistory();
 
