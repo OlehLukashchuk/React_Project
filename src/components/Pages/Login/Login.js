@@ -10,7 +10,7 @@ function LoginPage() {
         <input
           type="text"
           placeholder="Enter email"
-          className="loginBox_input"
+          className="loginBox_input loginBox_email"
         ></input>
         <input
           type="password"
@@ -18,6 +18,7 @@ function LoginPage() {
           className="loginBox_input"
         ></input>
         <NavLink to = {{pathname : "volt"}} className="loginBox_back">Back</NavLink>
+        <button className ="loginBox_login">Login</button>
       </div>
     </div>
   );
