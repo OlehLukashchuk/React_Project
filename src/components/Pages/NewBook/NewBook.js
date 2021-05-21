@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import BooksAction from "../../../store/action/Books";
 
-
 function NewBook() {
   const state = useSelector((state) => state.addBook.value);
   const dispatch = useDispatch();
@@ -19,13 +18,12 @@ function NewBook() {
     id: Math.floor(Math.random() * 99),
   });
 
-  function inputValue(event, keyName) {
+  const inputValue = (event, keyName) => {
     setValue({ ...changedValue, [keyName]: event.target.value });
-  }
-
-  function addBook() {
+  };
+  const addBook = () => {
     dispatch(BooksAction.setBooks(changedValue));
-  }
+  };
 
   return (
     <div className="addContainer">

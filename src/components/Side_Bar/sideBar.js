@@ -42,13 +42,7 @@ function SideBar() {
 
   const topArr = topSbChild.map((element, index) => {
     if (index === 2) {
-      return (
-        <SbChild
-          item={element}
-          key={`key-${index}`}
-          link={link[2]}
-        />
-      );
+      return <SbChild item={element} key={`key-${index}`} link={link[2]} />;
     } else if (index === 3) {
       return (
         <SbChild

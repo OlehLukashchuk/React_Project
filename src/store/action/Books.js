@@ -5,8 +5,9 @@ export default class BooksAction {
     return { type: "NewBook", value: data };
   };
 
+
   static setBooks = (data) => {
-    return function (dispatch) {
+    return  (dispatch) => {
       db.collection("books")
         .doc(`${data.id}`)
         .set(data)
@@ -15,4 +16,5 @@ export default class BooksAction {
         });
     };
   };
+
 }
