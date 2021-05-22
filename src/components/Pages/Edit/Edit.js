@@ -15,7 +15,7 @@ function Edit(props) {
     setBook({ ...book, [keyName]: event.target.value });
   };
 
-  const saveChanges = () => {
+  const saveChanges = React.useCallback(() => {
     const bookId = props.match.url.slice(12, props.match.length);
 
     db.collection("books").doc(bookId).update({
@@ -25,7 +25,7 @@ function Edit(props) {
       Genre: book.Genre,
     })
 
-  };
+  },[book]);
 
 
   React.useEffect(() => {
@@ -42,7 +42,6 @@ function Edit(props) {
           bookTemplate = {...data};
           setBook(bookTemplate);
           setLoading(false);
-          // setOpacity(1);
         } else {
           setTimeout(() => {
             history.push("/Error");

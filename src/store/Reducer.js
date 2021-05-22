@@ -1,10 +1,10 @@
 function AddBook(
   state = {
     value: {
-      Name: '',
-      Genre: '',
-      Year: '',
-      Author: '',
+      Name: "",
+      Genre: "",
+      Year: "",
+      Author: "",
     },
   },
   action
@@ -17,4 +17,18 @@ function AddBook(
   }
 }
 
-export default AddBook;
+function JwtToken(
+  state = {
+    value: {},
+  },
+  action
+) {
+  switch (action.type) {
+    case "AddToken":
+      return { value: action.value };
+    default:
+      return state;
+  }
+}
+
+export { AddBook, JwtToken };

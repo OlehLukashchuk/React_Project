@@ -5,7 +5,7 @@ import "../Main/main.css";
 import Footer from "../Footer/footer";
 import { Route, Switch } from "react-router-dom";
 import Loader from "react-loader-spinner";
-// import Edit from "../Pages/Edit/Edit";
+
 const Volt = React.lazy(() => import("../Pages/Volt/Volt"));
 const Overview = React.lazy(() => import("../Pages/Overview/Overview"));
 const Book = React.lazy(() =>
@@ -25,8 +25,9 @@ const Themes = React.lazy(() => import("../Pages/ThemesPage/Themes"));
 const Error = React.lazy(() => import("../Pages/404/404"));
 const Edit = React.lazy(() => import("../Pages/Edit/Edit"));
 const NewBook = React.lazy(() => import("../Pages/NewBook/NewBook"));
+const Login = React.lazy(() => import("../Pages/Login/Login"))
 
-const toPage = function (props, Page) {
+const toPage = (props, Page)  => {
   return (
     <Suspense
       fallback={
@@ -146,6 +147,12 @@ function Main(props) {
           history={history}
           path="/Themes"
           render={(props) => toPage(props, Themes)}
+        />
+        <Route
+          exact
+          history={history}
+          path="/Login"
+          render={(props) => toPage(props, Login)}
         />
         <Route
           path="*"

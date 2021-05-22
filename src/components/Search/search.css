@@ -4,7 +4,22 @@
   display:flex;
 }
 
-input[type="text"]{
+.small{
+  width: 280px;
+  height: 100%;
+  background-color: white;
+  border: 1px solid #d8d8d8;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.large{
+  width: 483px;
   height: 100%;
   background-color: white;
   border: 1px solid #d8d8d8;
@@ -42,9 +57,3 @@ input[type="text"]{
   display:flex;
 }
 
-.small{
-  width: 280px;
-}
-.large{
-  width: 483px;
-}
