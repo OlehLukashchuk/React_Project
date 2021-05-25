@@ -31,7 +31,7 @@
   font-family: 'Roboto-Medium';
   font-size: 20px;
   color: black;
-
+  outline: none;
 }
 
 ::placeholder {

@@ -1,5 +1,5 @@
 import { db } from "../../components/Pages/Book/Firebase-config";
-import {AppDispatch} from "../.."
+import {AppDispatch} from "../../index"
 
 interface DataType {
     Name: string,

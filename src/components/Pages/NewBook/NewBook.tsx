@@ -4,7 +4,7 @@ import "../NewBook/NewBook.css";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import BooksAction from "../../../store/action/Books";
-import { RootState } from "../../..";
+import { RootState } from "../../../index";
 
 function NewBook() {
   const state = useSelector((state: RootState) => state.addBook.value);
@@ -19,15 +19,16 @@ function NewBook() {
     id: Math.floor(Math.random() * 99),
   });
 
-  const inputValue = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    keyName: string
-  ) => {
-    setValue({ ...changedValue, [keyName]: event.target.value });
-  };
-  const addBook = () => {
+  const inputValue = React.useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>, keyName: string) => {
+      setValue({ ...changedValue, [keyName]: event.target.value });
+    },
+    [changedValue]
+  );
+
+  const addBook = React.useCallback(() => {
     dispatch(BooksAction.setBooks(changedValue));
-  };
+  }, [changedValue]);
 
   return (
     <div className="addContainer">

@@ -3,7 +3,7 @@ interface ActionType {
   value: any;
 }
 
-function AddBook(
+const AddBook = (
   state = {
     value: {
       Name: "",
@@ -13,27 +13,27 @@ function AddBook(
     },
   },
   action: ActionType
-) {
+) => {
   switch (action.type) {
     case "NewBook":
       return { value: action.value };
     default:
       return state;
   }
-}
+};
 
-function JwtToken(
+const JwtToken = (
   state = {
-    value: '',
+    value: "",
   },
   action: any
-) {
+) => {
   switch (action.type) {
     case "AddToken":
       return { value: action.value };
     default:
       return state;
   }
-}
+};
 
 export { AddBook, JwtToken };

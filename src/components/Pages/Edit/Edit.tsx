@@ -18,14 +18,14 @@ interface BookType {
 function Edit(props: any) {
   const [book, setBook] = React.useState<BookType>({});
   const [loading, setLoading] = React.useState(false);
-  let history = useHistory();
+  const history = useHistory();
 
-  const editBook = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    keyName: string
-  ) => {
-    setBook({ ...book, [keyName]: event.target.value });
-  };
+  const editBook = React.useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>, keyName: string) => {
+      setBook({ ...book, [keyName]: event.target.value });
+    },
+    [book]
+  );
 
   const saveChanges = React.useCallback(() => {
     const bookId = props.match.url.slice(12, props.match.length);

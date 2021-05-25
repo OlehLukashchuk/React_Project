@@ -2,7 +2,7 @@ import React from "react";
 import "../Volt/Volt.css";
 import { useSelector, useDispatch } from "react-redux";
 import jwt_decode from "jwt-decode";
-import { RootState } from "../../..";
+import { RootState } from "../../../index";
 
 function Volt(props: any) {
   const state = useSelector((state: RootState) => state.JwtToken);
@@ -26,14 +26,14 @@ function Volt(props: any) {
     decodeToken();
   }, [addToken, decodeToken]);
 
-  const privateRoute = () => {
+  const privateRoute = React.useCallback(() => {
     const date = Date.now() / 1000;
     if (date < state.value.exp) {
       props.history.push("/Login");
     } else {
       props.history.push("/books");
     }
-  };
+  },[props.history,state.value.exp]);
 
   return (
     <div className="voltContainer">

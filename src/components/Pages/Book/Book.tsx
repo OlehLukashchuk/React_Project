@@ -8,6 +8,18 @@ import "../Book/Style.css";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
 
+interface BookType {
+  Author?: String;
+  Name?: String;
+  Genre?: String;
+  Year?: Number;
+  id?: Number;
+  posterImage?: String;
+  shadow?: String;
+  BgImage?: String;
+}
+
+
 const columns = [
   { field: "id", headerName: "ID", width: 130 },
   { field: "Name", headerName: "Book Name", width: 160 },
@@ -36,16 +48,6 @@ const columns = [
   },
 ];
 
-interface BookType {
-  Author?: String;
-  Name?: String;
-  Genre?: String;
-  Year?: Number;
-  id?: Number;
-  posterImage?: String;
-  shadow?: String;
-  BgImage?: String;
-}
 
 function Book() {
   const [books, setBooks] = React.useState<BookType[]>([]);
