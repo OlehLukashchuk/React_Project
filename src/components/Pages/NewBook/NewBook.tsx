@@ -4,9 +4,10 @@ import "../NewBook/NewBook.css";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import BooksAction from "../../../store/action/Books";
+import { RootState } from "../../..";
 
 function NewBook() {
-  const state = useSelector((state) => state.addBook.value);
+  const state = useSelector((state: RootState) => state.addBook.value);
   const dispatch = useDispatch();
   const [changedValue, setValue] = React.useState({
     Name: state.Name,
@@ -18,7 +19,10 @@ function NewBook() {
     id: Math.floor(Math.random() * 99),
   });
 
-  const inputValue = (event, keyName) => {
+  const inputValue = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    keyName: string
+  ) => {
     setValue({ ...changedValue, [keyName]: event.target.value });
   };
   const addBook = () => {

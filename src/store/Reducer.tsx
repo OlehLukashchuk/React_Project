@@ -1,3 +1,8 @@
+interface ActionType {
+  type: string;
+  value: any;
+}
+
 function AddBook(
   state = {
     value: {
@@ -7,7 +12,7 @@ function AddBook(
       Author: "",
     },
   },
-  action
+  action: ActionType
 ) {
   switch (action.type) {
     case "NewBook":
@@ -19,9 +24,9 @@ function AddBook(
 
 function JwtToken(
   state = {
-    value: {},
+    value: '',
   },
-  action
+  action: any
 ) {
   switch (action.type) {
     case "AddToken":

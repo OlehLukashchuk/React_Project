@@ -1,6 +1,6 @@
 import React from "react";
-import Search from "../Search/search";
-import "../Header/header.css";
+import Search from "../Search/Search";
+import "../Header/Header.css";
 
 function Header() {
   return (

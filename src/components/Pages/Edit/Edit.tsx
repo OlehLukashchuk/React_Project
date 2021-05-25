@@ -1,17 +1,29 @@
 import React from "react";
 import "../Edit/Edit.css";
-import { db} from "../Book/firebase-config";
+import { db } from "../Book/Firebase-config";
 import Loader from "react-loader-spinner";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+interface BookType {
+  Name?: string;
+  Author?: string;
+  Year?: number;
+  Genre?: string;
+  BgImage?: string;
+  posterImage?: string;
+  shadow?: string;
+}
 
-function Edit(props) {
-  const [book, setBook] = React.useState({});
+function Edit(props: any) {
+  const [book, setBook] = React.useState<BookType>({});
   const [loading, setLoading] = React.useState(false);
   let history = useHistory();
 
-  const editBook = (event, keyName) => {
+  const editBook = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    keyName: string
+  ) => {
     setBook({ ...book, [keyName]: event.target.value });
   };
 
@@ -23,13 +35,10 @@ function Edit(props) {
       Author: book.Author,
       Year: book.Year,
       Genre: book.Genre,
-    })
-
-  },[book]);
-
+    });
+  }, [book]);
 
   React.useEffect(() => {
-
     const bookId = props.match.url.slice(12, props.match.length);
     let bookTemplate = {};
     setLoading(true);
@@ -39,7 +48,7 @@ function Edit(props) {
       .then((snapshot) => {
         if (snapshot.exists) {
           const data = snapshot.data();
-          bookTemplate = {...data};
+          bookTemplate = { ...data };
           setBook(bookTemplate);
           setLoading(false);
         } else {
@@ -52,10 +61,7 @@ function Edit(props) {
   }, []);
 
   return (
-    <div
-      className="bg"
-      style={{backgroundImage: `url('${book.BgImage}')` }}
-    >
+    <div className="bg" style={{ backgroundImage: `url('${book.BgImage}')` }}>
       {!loading ? (
         <div className="editContainer">
           <div
@@ -97,7 +103,7 @@ function Edit(props) {
                 onChange={(event) => editBook(event, "Author")}
               ></input>
             </div>
-            <Link className="saveBtn" onClick={saveChanges} to='/books'>
+            <Link className="saveBtn" onClick={saveChanges} to="/books">
               Save
             </Link>
           </form>
@@ -108,13 +114,9 @@ function Edit(props) {
         </div>
       ) : (
         <div className="loader">
-          <Loader
-            type="ThreeDots"
-            color="brown"
-            height={100}
-            width={100}
-            className="loader"
-          />
+          <div className="loader">
+            <Loader type="ThreeDots" color="brown" height={100} width={100} />
+          </div>
         </div>
       )}
     </div>

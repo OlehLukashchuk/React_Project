@@ -7,9 +7,9 @@ function Error() {
     <div className="errorContainer">
 
       <NavLink to={{ pathname: "/"}}>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-md-12 mt-5 mb-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-12 col-md-12 mt-5 mb-5">
               <svg
                 width="100%"
                 height="auto"

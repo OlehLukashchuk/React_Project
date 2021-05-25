@@ -1,8 +1,12 @@
 import React from "react";
-import "../Book/style.css";
+import "../Book/Style.css";
 import { Link } from "react-router-dom";
 
-function Button(props) {
+interface PropsType {
+  match : Number
+}
+
+function Button(props:PropsType) {
   return <Link to={`/books/edit/${props.match}`}></Link>;
 }
 
