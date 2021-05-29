@@ -1,16 +1,16 @@
-import React, { Suspense } from "react";
-import SideBar from "../Side_Bar/sideBar";
-import Header from "../Header/header";
-import "../Main/main.css";
-import Footer from "../Footer/footer";
+import React, {
+  Suspense,
+} from "react";
+import SideBar from "../Side_Bar/SideBar";
+import Header from "../Header/Header";
+import "../Main/Main.css";
+import Footer from "../Footer/Footer";
 import { Route, Switch } from "react-router-dom";
 import Loader from "react-loader-spinner";
 
 const Volt = React.lazy(() => import("../Pages/Volt/Volt"));
 const Overview = React.lazy(() => import("../Pages/Overview/Overview"));
-const Book = React.lazy(() =>
-  import("../Pages/Book/Book")
-);
+const Book = React.lazy(() => import("../Pages/Book/Book"));
 const Settings = React.lazy(() => import("../Pages/SettingPage/Settings"));
 const Table = React.lazy(() => import("../Pages/Table/Table"));
 const Example = React.lazy(() => import("../Pages/Examples/Example"));
@@ -25,13 +25,38 @@ const Themes = React.lazy(() => import("../Pages/ThemesPage/Themes"));
 const Error = React.lazy(() => import("../Pages/404/404"));
 const Edit = React.lazy(() => import("../Pages/Edit/Edit"));
 const NewBook = React.lazy(() => import("../Pages/NewBook/NewBook"));
-const Login = React.lazy(() => import("../Pages/Login/Login"))
+const Login = React.lazy(() => import("../Pages/Login/Login"));
 
-const toPage = (props, Page)  => {
+const toPage = (
+  props : any,
+  Page: any
+) => {
   return (
     <Suspense
       fallback={
-        <Loader type="ThreeDots" color="brown" height={100} width={100} className ="loader"/>
+        <div className="loader">
+          <Loader type="ThreeDots" color="brown" height={100} width={100} />
+        </div>
+      }
+    >
+      <SideBar />
+      <Header />
+      <Page {...props} />
+      <Footer />
+    </Suspense>
+  );
+};
+
+const toLogin = (
+  props : any,
+  Page: any
+) => {
+  return (
+    <Suspense
+      fallback={
+        <div className="loader">
+          <Loader type="ThreeDots" color="brown" height={100} width={100} />
+        </div>
       }
     >
       <Page {...props} />
@@ -39,127 +64,71 @@ const toPage = (props, Page)  => {
   );
 };
 
-function Main(props) {
-  const { history } = props;
+
+function Main() {
   return (
     <main>
-      <SideBar />
-      <Header />
       <Switch>
+        <Route exact path="/" render={(props) => toPage(props, Volt)} />
+        <Route exact path="/volt" render={(props) => toPage(props, Volt)} />
         <Route
           exact
-          history={history}
-          path="/"
-          render={(props) => toPage(props, Volt)}
-        />
-        <Route
-          exact
-          history={history}
-          path="/volt"
-          render={(props) => toPage(props, Volt)}
-        />
-        <Route
-          exact
-          history={history}
           path="/overview"
           render={(props) => toPage(props, Overview)}
         />
+        <Route exact path="/books" render={(props) => toPage(props, Book)} />
         <Route
           exact
-          history={history}
-          path="/books"
-          render={(props) => toPage(props, Book)}
-        />
-        <Route
-          exact
-          history={history}
           path="/books/edit/:id"
           render={(props) => toPage(props, Edit)}
         />
         <Route
           exact
-          history={history}
           path="/newBook"
           render={(props) => toPage(props, NewBook)}
         />
         <Route
           exact
-          history={history}
           path="/settings"
           render={(props) => toPage(props, Settings)}
         />
+        <Route exact path="/tables" render={(props) => toPage(props, Table)} />
         <Route
           exact
-          history={history}
-          path="/tables"
-          render={(props) => toPage(props, Table)}
-        />
-        <Route
-          exact
-          history={history}
           path="/examples"
           render={(props) => toPage(props, Example)}
         />
         <Route
           exact
-          history={history}
           path="/plugins"
           render={(props) => toPage(props, Plugin)}
         />
         <Route
           exact
-          history={history}
           path="/started"
           render={(props) => toPage(props, Started)}
         />
         <Route
           exact
-          history={history}
           path="/components"
           render={(props) => toPage(props, Component)}
         />
         <Route
           exact
-          history={history}
           path="/themesberg"
           render={(props) => toPage(props, Themesberg)}
         />
+        <Route exact path="/About" render={(props) => toPage(props, About)} />
+        <Route exact path="/Blog" render={(props) => toPage(props, Blog)} />
         <Route
           exact
-          history={history}
-          path="/About"
-          render={(props) => toPage(props, About)}
-        />
-        <Route
-          exact
-          history={history}
-          path="/Blog"
-          render={(props) => toPage(props, Blog)}
-        />
-        <Route
-          exact
-          history={history}
           path="/Contact"
           render={(props) => toPage(props, Contact)}
         />
-        <Route
-          exact
-          history={history}
-          path="/Themes"
-          render={(props) => toPage(props, Themes)}
-        />
-        <Route
-          exact
-          history={history}
-          path="/Login"
-          render={(props) => toPage(props, Login)}
-        />
-        <Route
-          path="*"
-          render={(props) => toPage(props, Error)}
-        ></Route>
+        <Route exact path="/Themes" render={(props) => toPage(props, Themes)} />
+        <Route exact path="/Login" render={(props) => toLogin(props, Login)} />
+        <Route path="*" render={(props) => toPage(props, Error)}></Route>
       </Switch>
-      <Footer />
     </main>
   );
 }

@@ -1,12 +1,24 @@
 import * as React from "react";
-import { db } from "./firebase-config";
+import { db } from "./Firebase-config";
 import { DataGrid } from "@material-ui/data-grid";
-import Search from "../../Search/search";
+import Search from "../../Search/Search";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
-import "../Book/style.css";
+import "../Book/Style.css";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
+
+interface BookType {
+  Author?: String;
+  Name?: String;
+  Genre?: String;
+  Year?: Number;
+  id?: Number;
+  posterImage?: String;
+  shadow?: String;
+  BgImage?: String;
+}
+
 
 const columns = [
   { field: "id", headerName: "ID", width: 130 },
@@ -28,18 +40,21 @@ const columns = [
     headerName: "Edit Book",
     disableClickEventBubbling: true,
     width: 150,
-    renderCell: (props) => {
+    // Цікавить цей тип
+    renderCell: (props: any) => {
+      console.log(props);
       return <Button match={props.id}></Button>;
     },
   },
 ];
 
+
 function Book() {
-  const [books, setBooks] = React.useState([]);
+  const [books, setBooks] = React.useState<BookType[]>([]);
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
-    const allBooks = [];
+    const allBooks: BookType[] = [];
     setLoading(true);
 
     db.collection("books")
@@ -47,7 +62,9 @@ function Book() {
       .then((snapshot) => {
         snapshot.forEach((doc) => {
           const data = doc.data();
-          allBooks.push(data);
+          if (data) {
+            allBooks.push(data);
+          }
         });
 
         setBooks(allBooks);

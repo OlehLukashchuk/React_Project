@@ -1,6 +1,6 @@
 import React from "react";
-import "../SettingPage/setting.css";
-import DatePicker from "./DatePicker/date";
+import "../SettingPage/Setting.css";
+import DatePicker from "./DatePicker/Date";
 
 function Settings() {
   return (

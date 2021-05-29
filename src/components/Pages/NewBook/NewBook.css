@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Roboto-Medium';
-  src: url('../../Fonts/Roboto-Medium.ttf')
+  src: url('../../../fonts/Roboto-Medium.ttf')
 }
 
 .addContainer form {
@@ -31,7 +31,7 @@
   font-family: 'Roboto-Medium';
   font-size: 20px;
   color: black;
-
+  outline: none;
 }
 
 ::placeholder {

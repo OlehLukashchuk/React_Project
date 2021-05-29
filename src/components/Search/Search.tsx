@@ -1,7 +1,7 @@
 import React from "react";
-import "../Search/search.css";
+import "../Search/Search.css";
 
-function Search(props) {
+function Search(props : any) {
   return (
     <div className={props.class}>
       <span className="inputLogo"></span>

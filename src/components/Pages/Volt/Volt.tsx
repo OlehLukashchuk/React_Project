@@ -2,10 +2,10 @@ import React from "react";
 import "../Volt/Volt.css";
 import { useSelector, useDispatch } from "react-redux";
 import jwt_decode from "jwt-decode";
+import { RootState } from "../../../index";
 
-
-function Volt(props) {
-  const state = useSelector((state) => state.JwtToken);
+function Volt(props: any) {
+  const state = useSelector((state: RootState) => state.JwtToken);
   const dispatch = useDispatch();
 
   const addToken = React.useCallback(() => {
@@ -15,7 +15,8 @@ function Volt(props) {
   }, []);
 
   const decodeToken = React.useCallback(() => {
-    const getItem = localStorage.getItem("jwtToken");
+    const getItem: string = localStorage.getItem("jwtToken")!;
+    // ЗАПИТАТИ про non-null assertion operator ' ! '
     const decodedJwt = jwt_decode(getItem);
     dispatch({ type: "AddToken", value: decodedJwt });
   }, [dispatch]);
@@ -25,18 +26,17 @@ function Volt(props) {
     decodeToken();
   }, [addToken, decodeToken]);
 
-  const privateRoute = () => {
+  const privateRoute = React.useCallback(() => {
     const date = Date.now() / 1000;
     if (date < state.value.exp) {
       props.history.push("/Login");
     } else {
       props.history.push("/books");
     }
-  };
+  },[props.history,state.value.exp]);
 
   return (
     <div className="voltContainer">
-
       <button className="checkToken" onClick={privateRoute}>
         Check
       </button>

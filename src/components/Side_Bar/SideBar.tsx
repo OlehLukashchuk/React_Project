@@ -1,15 +1,15 @@
 import React from "react";
-import "../Side_Bar/sideBar.css";
-import SbChild from "../Side_Bar/sideBar_child/sB_child";
-import logo from "../Side_Bar/sideBar_child/sB_child_logo/logo.png";
-import overview from "../Side_Bar/sideBar_child/sB_child_logo/overwiew.png";
-import transaction from "../Side_Bar/sideBar_child/sB_child_logo/transaction.png";
-import setting from "../Side_Bar/sideBar_child/sB_child_logo/setting.png";
-import file from "../Side_Bar/sideBar_child/sB_child_logo/file.png";
-import table from "../Side_Bar/sideBar_child/sB_child_logo/table.png";
-import book from "../Side_Bar/sideBar_child/sB_child_logo/book.png";
-import themesberg from "../Side_Bar/sideBar_child/sB_child_logo/themesberg.png";
-import box from "../Side_Bar/sideBar_child/sB_child_logo/box.png";
+import "../Side_Bar/SideBar.css";
+import SbChild from "./SideBar_child/Sb_child";
+import logo from "../Side_Bar/SideBar_child/sb_child_logo/logo.png";
+import overview from "../Side_Bar/SideBar_child/sb_child_logo/overwiew.png";
+import transaction from "../Side_Bar/SideBar_child/sb_child_logo/transaction.png";
+import setting from "../Side_Bar/SideBar_child/sb_child_logo/setting.png";
+import file from "../Side_Bar/SideBar_child/sb_child_logo/file.png";
+import table from "../Side_Bar/SideBar_child/sb_child_logo/table.png";
+import book from "../Side_Bar/SideBar_child/sb_child_logo/book.png";
+import themesberg from "../Side_Bar/SideBar_child/sb_child_logo/themesberg.png";
+import box from "../Side_Bar/SideBar_child/sb_child_logo/box.png";
 
 function SideBar() {
   const topSbChild = [

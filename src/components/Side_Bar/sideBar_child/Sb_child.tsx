@@ -1,14 +1,27 @@
 import React from "react";
-import "../sideBar_child/sB_child.css";
-import {NavLink} from "react-router-dom";
+import "./Sb_child.css";
+import { NavLink } from "react-router-dom";
 
-function SbChild(props) {
+interface ItemType {
+  icon: string;
+  text: string;
+}
 
+interface PropsType {
+  arrow?: string;
+  link: string;
+  item: ItemType;
+}
+
+function SbChild(props: PropsType) {
+  console.log(props);
   return (
-    <NavLink className={`SbChild ${props.arrow ? props.arrow : ''}`} to={{
-      pathname : props.link ? props.link : 'defaultLink',
-      // search : '?key=value'
-    }}>
+    <NavLink
+      className={`SbChild ${props.arrow ? props.arrow : ""}`}
+      to={{
+        pathname: props.link ? props.link : "defaultLink",
+      }}
+    >
       <img src={props.item.icon} alt="someImg"></img>
       <span>{props.item.text}</span>
     </NavLink>
