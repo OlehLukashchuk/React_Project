@@ -1,35 +1,37 @@
-import React, {
-  Suspense,
-} from "react";
-import SideBar from "../Side_Bar/SideBar";
-import Header from "../Header/Header";
-import "../Main/Main.css";
-import Footer from "../Footer/Footer";
-import { Route, Switch } from "react-router-dom";
+import React, { Suspense, memo, lazy } from "react";
+import { Route, RouteComponentProps, Switch } from "react-router-dom";
 import Loader from "react-loader-spinner";
 
-const Volt = React.lazy(() => import("../Pages/Volt/Volt"));
-const Overview = React.lazy(() => import("../Pages/Overview/Overview"));
-const Book = React.lazy(() => import("../Pages/Book/Book"));
-const Settings = React.lazy(() => import("../Pages/SettingPage/Settings"));
-const Table = React.lazy(() => import("../Pages/Table/Table"));
-const Example = React.lazy(() => import("../Pages/Examples/Example"));
-const Plugin = React.lazy(() => import("../Pages/PluginsPage/Plugin"));
-const Started = React.lazy(() => import("../Pages/Started/Started"));
-const Component = React.lazy(() => import("../Pages/ComponentPage/Component"));
-const Themesberg = React.lazy(() => import("../Pages/Themesberg/Themesberg"));
-const About = React.lazy(() => import("../Pages/About/About"));
-const Blog = React.lazy(() => import("../Pages/Blog/Blog"));
-const Contact = React.lazy(() => import("../Pages/Contact/Contact"));
-const Themes = React.lazy(() => import("../Pages/ThemesPage/Themes"));
-const Error = React.lazy(() => import("../Pages/404/404"));
-const Edit = React.lazy(() => import("../Pages/Edit/Edit"));
-const NewBook = React.lazy(() => import("../Pages/NewBook/NewBook"));
-const Login = React.lazy(() => import("../Pages/Login/Login"));
+import { SideBar } from "../Side_Bar";
+import { Header } from "../Header";
+import { Footer } from "../Footer";
+
+import "../Main/Main.scss";
+
+const Volt = lazy(() => import("../../pages/Volt"));
+const Overview = lazy(() => import("../../pages/Overview"));
+const Book = lazy(() => import("../../pages/Book"));
+const Settings = lazy(() => import("../../pages/SettingPage"));
+const Table = lazy(() => import("../../pages/Table"));
+const Example = lazy(() => import("../../pages/Examples"));
+const Plugin = lazy(() => import("../../pages/PluginsPage"));
+const Started = lazy(() => import("../../pages/Started"));
+const Component = lazy(() => import("../../pages/ComponentPage"));
+const Themesberg = lazy(() => import("../../pages/Themesberg"));
+const About = lazy(() => import("../../pages/About"));
+const Blog = lazy(() => import("../../pages/Blog"));
+const Contact = lazy(() => import("../../pages/Contact"));
+const Themes = lazy(() => import("../../pages/ThemesPage"));
+const Error = lazy(() => import("../../pages/404"));
+const Edit = lazy(() => import("../../pages/Edit"));
+const NewBook = lazy(() => import("../../pages/NewBook"));
+const Login = lazy(() => import("../../pages/Login"));
 
 const toPage = (
-  props : any,
-  Page: any
+  props: RouteComponentProps<{}, any, any>,
+  Page: React.LazyExoticComponent<
+    React.MemoExoticComponent<(props: any) => JSX.Element>
+  >
 ) => {
   return (
     <Suspense
@@ -48,8 +50,10 @@ const toPage = (
 };
 
 const toLogin = (
-  props : any,
-  Page: any
+  props: RouteComponentProps<{}, any, any>,
+  Page: React.LazyExoticComponent<
+    React.MemoExoticComponent<(props: any) => JSX.Element>
+  >
 ) => {
   return (
     <Suspense
@@ -64,86 +68,40 @@ const toLogin = (
   );
 };
 
-
-function Main() {
+export const Main = memo(() => {
   return (
     <main>
       <Switch>
         <Route exact path="/" render={(props) => toPage(props, Volt)} />
-        <Route exact path="/volt" render={(props) => toPage(props, Volt)} />
-        <Route
-          exact
-          path="/overview"
-          render={(props) => toPage(props, Overview)}
-        />
+        <Route path="/volt" render={(props) => toPage(props, Volt)} />
+        <Route path="/overview" render={(props) => toPage(props, Overview)} />
         <Route exact path="/books" render={(props) => toPage(props, Book)} />
         <Route
           exact
           path="/books/edit/:id"
           render={(props) => toPage(props, Edit)}
         />
-        <Route
-          exact
-          path="/newBook"
-          render={(props) => toPage(props, NewBook)}
-        />
-        <Route
-          exact
-          path="/settings"
-          render={(props) => toPage(props, Settings)}
-        />
+        <Route path="/newBook" render={(props) => toPage(props, NewBook)} />
+        <Route path="/settings" render={(props) => toPage(props, Settings)} />
         <Route exact path="/tables" render={(props) => toPage(props, Table)} />
+        <Route path="/examples" render={(props) => toPage(props, Example)} />
+        <Route path="/plugins" render={(props) => toPage(props, Plugin)} />
+        <Route path="/started" render={(props) => toPage(props, Started)} />
         <Route
-          exact
-          path="/examples"
-          render={(props) => toPage(props, Example)}
-        />
-        <Route
-          exact
-          path="/plugins"
-          render={(props) => toPage(props, Plugin)}
-        />
-        <Route
-          exact
-          path="/started"
-          render={(props) => toPage(props, Started)}
-        />
-        <Route
-          exact
           path="/components"
           render={(props) => toPage(props, Component)}
         />
         <Route
-          exact
           path="/themesberg"
           render={(props) => toPage(props, Themesberg)}
         />
-        <Route exact path="/About" render={(props) => toPage(props, About)} />
-        <Route exact path="/Blog" render={(props) => toPage(props, Blog)} />
-        <Route
-          exact
-          path="/Contact"
-          render={(props) => toPage(props, Contact)}
-        />
-        <Route exact path="/Themes" render={(props) => toPage(props, Themes)} />
-        <Route exact path="/Login" render={(props) => toLogin(props, Login)} />
+        <Route path="/about" render={(props) => toPage(props, About)} />
+        <Route path="/blog" render={(props) => toPage(props, Blog)} />
+        <Route path="/contact" render={(props) => toPage(props, Contact)} />
+        <Route path="/themes" render={(props) => toPage(props, Themes)} />
+        <Route path="/login" render={(props) => toLogin(props, Login)} />
         <Route path="*" render={(props) => toPage(props, Error)}></Route>
       </Switch>
     </main>
   );
-}
-
-// class Main extends React.PureComponent {
-//   render() {
-//     return (
-//       <main>
-//       <SideBar/>
-//       <Header/>
-//       <Table/>
-//       <Footer/>
-//     </main>
-//     )
-//   }
-// }
-
-export default React.memo(Main);
+});

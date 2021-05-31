@@ -1,0 +1,288 @@
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url("../../fonts/Roboto-Medium.ttf");
+}
+
+.bg {
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 10px;
+  opacity: 0;
+  -webkit-animation-name: showBgImage;
+          animation-name: showBgImage;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.editContainer form {
+  width: 70%;
+  height: 375px;
+  margin-top: 26px;
+  margin-left: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  opacity: 0;
+  -webkit-animation-name: showDescription;
+          animation-name: showDescription;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.editContainer form input[type="text"] {
+  width: 0px;
+  height: 40px;
+  background: transparent;
+  color: white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid white;
+  padding-left: 10px;
+  border-radius: 0px;
+  font-family: 'Roboto-Medium';
+  font-size: 20px;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+  -webkit-animation-name: inputsAni;
+          animation-name: inputsAni;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+::-webkit-input-placeholder {
+  color: gray;
+}
+
+:-ms-input-placeholder {
+  color: gray;
+}
+
+::-ms-input-placeholder {
+  color: gray;
+}
+
+::placeholder {
+  color: gray;
+}
+
+.editContainer form span {
+  font-size: 25px;
+  text-shadow: 0px 0px 5px black;
+  font-family: 'Roboto-Medium';
+}
+
+.editContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px;
+}
+
+.poster {
+  height: 430px;
+  width: 290px;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  -webkit-animation-name: imgAnimation;
+          animation-name: imgAnimation;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.editContainer_child {
+  width: 530px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.editContainer form .saveBtn {
+  height: 35px;
+  width: 150px;
+  position: absolute;
+  bottom: 330px;
+  right: 28%;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  -webkit-transition: background 2s ease;
+  transition: background 2s ease;
+  text-shadow: 0px 0px 5px black;
+  -webkit-box-shadow: 0px 0px 5px 1px black;
+          box-shadow: 0px 0px 5px 1px black;
+  opacity: 0;
+  -webkit-animation-name: btnAni;
+          animation-name: btnAni;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.saveBtn:hover {
+  cursor: pointer;
+}
+
+.saveBtn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+@-webkit-keyframes glow {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: black;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes glow {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: black;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@-webkit-keyframes btnAni {
+  100% {
+    opacity: 1;
+    right: 42%;
+  }
+}
+
+@keyframes btnAni {
+  100% {
+    opacity: 1;
+    right: 42%;
+  }
+}
+
+@-webkit-keyframes inputsAni {
+  100% {
+    width: 350px;
+  }
+}
+
+@keyframes inputsAni {
+  100% {
+    width: 350px;
+  }
+}
+
+@-webkit-keyframes showDescription {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showDescription {
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes showBgImage {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showBgImage {
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes shadowAni {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shadowAni {
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes imgAnimation {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes imgAnimation {
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=Edit.css.map */

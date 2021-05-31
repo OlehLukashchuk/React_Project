@@ -1,0 +1,482 @@
+.settings_neck {
+  height: 43.59px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 28px 0 23px;
+}
+
+.settings_newBtn {
+  height: 100%;
+  width: 82px;
+  background-color: #61dbfc;
+  background-image: url('./settings_img/iconfinder_plus_214640.png');
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position-y: 12px;
+  background-position-x: 13px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  padding-left: 21px;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+.settings_newBtn:focus {
+  box-shadow: inset 0 1px 0 hsl(0deg, 0%, 100% / 15%), 0 1px 1px rgb(46, 54, 80 / 8%), 0 0 0 0.1rem rgb(88, 192, 223 / 50%);
+}
+
+.settings_newBtn:hover {
+  cursor: pointer;
+}
+
+.settings_reports {
+  width: 121.55px;
+  height: 100%;
+  background-color: #262b3f;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  position: relative;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+.settings_reports:focus {
+  box-shadow: inset 0 3px 5px rgb(46, 54, 80 / 13%), 0 0 0 0.1rem rgb(71, 75, 93 / 50%);
+}
+
+.settings_reports:hover {
+  cursor: pointer;
+}
+
+.settings_reports:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url('./settings_img/down_arrow.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  right: 11px;
+  top: 14px;
+
+}
+
+.settings_container {
+  height: 720px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.settingsMain_leftContent {
+  width: 1066px;
+  height: 691px;
+  background-color: white;
+  border: .0625rem solid rgba(46, 54, 80, .125);
+  border-radius: 10px;
+  padding: 25px 24px 0 24px;
+}
+
+.settingsMain_leftContent h5 {
+  width: 100%;
+  color: #262b40;
+  font-size: 1.25rem;
+}
+
+.settingsMain_leftContent .form1 {
+  width: 100%;
+  height: 300px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form1_child {
+  width: 494px;
+  height: 44px;
+}
+
+.form1_child span {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #4a5073;
+}
+
+.form1_child input[type="text"] {
+  width: 100%;
+  height: 100%;
+  margin-top: 15px;
+  line-height: 1.5;
+  color: #66799e;
+  border: .0625rem solid #d1d7e0;
+  border-radius: .5rem;
+  padding-left: 13px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+.form1_child select {
+  width: 100%;
+  height: 100%;
+  margin-top: 15px;
+  line-height: 1.5;
+  color: #66799e;
+  border: .0625rem solid #d1d7e0;
+  border-radius: .5rem;
+  padding-left: 13px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  font-size: 16px;
+  outline: none;
+  appearance: none;
+  background-image: url('./settings_img/iconfinder_arrow-down-01_186411.png');
+  background-size: 17px;
+  background-repeat: no-repeat;
+  background-position-y: 11px;
+  background-position-x: 97%;
+}
+
+.form1_child input[type="text"]::placeholder {
+  color: #908ea7;
+}
+
+.form1_child input[type="text"]:focus {
+  color: #66799e;
+  background-color: #fff;
+  border-color: #566190;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgb(46, 54, 80 / 8%), 0 0 0 0.1rem rgb(38, 43, 64 / 25%);
+}
+
+.birthday .MuiGrid-container {
+  width: 494px;
+}
+
+.birthday .MuiGrid-container .MuiFormControl-root {
+  width: 100%;
+}
+
+.MuiGrid-root .MuiFormControl-root {
+  border: .0625rem solid #d1d7e0;
+  border-radius: 10px;
+}
+
+
+.birthday .MuiGrid-container .MuiFormControl-root .MuiInput-root input[type="text"] {
+  height: 44px;
+  margin: 0px;
+  padding: 0px 0px 0px 13px;
+  border: none;
+}
+
+.birthday .MuiGrid-container .MuiFormControl-root .MuiInput-root input[type="text"]:focus {
+  color: #66799e;
+  background-color: inset;
+  border-color: inset;
+  outline: none;
+  box-shadow: none;
+}
+
+.MuiFormControl-root {
+  transition: box-shadow .15s ease-in-out;
+}
+
+.MuiFormControl-root:hover {
+  box-shadow: inset 0 1px 2px rgb(46, 54, 80 / 8%), 0 0 0 0.1rem rgb(38, 43, 64 / 25%);
+}
+
+.MuiFormControl-root .MuiInput-underline::before {
+  border: none;
+}
+
+.MuiFormControl-root .MuiInput-underline::after {
+  border: none;
+}
+
+.MuiFormControl-root .MuiInput-underline:hover:not(.Mui-disabled)::before {
+  border-bottom: none;
+}
+
+.MuiFormControl-root p {
+  margin-left: 15px;
+}
+
+.settingsMain_leftContent .form2 {
+  width: 100%;
+  height: 185px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form2_child:first-child {
+  width: 754px;
+  height: 44px;
+}
+
+.form2_child:nth-child(2) {
+  width: 234px;
+  height: 44px;
+}
+
+.form2_child:nth-child(2) {
+  width: 234px;
+  height: 44px;
+}
+
+.form2_child:nth-child(n+3) {
+  width: 322px;
+  height: 44px;
+}
+
+.form2_child input[type="text"] {
+  width: 100%;
+  height: 100%;
+  margin-top: 15px;
+  line-height: 1.5;
+  color: #66799e;
+  border: .0625rem solid #d1d7e0;
+  border-radius: .5rem;
+  padding-left: 13px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form2_child input[type="text"]::placeholder {
+  color: #908ea7;
+}
+
+.form2_child input[type="text"]:focus {
+  color: #66799e;
+  background-color: #fff;
+  border-color: #566190;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgb(46, 54, 80 / 8%), 0 0 0 0.1rem rgb(38, 43, 64 / 25%);
+}
+
+.form2_child select {
+  width: 322px;
+  height: 100%;
+  margin-top: 15px;
+  line-height: 1.5;
+  color: #66799e;
+  border: .0625rem solid #d1d7e0;
+  border-radius: .5rem;
+  padding-left: 13px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  font-size: 16px;
+  outline: none;
+  appearance: none;
+  background-image: url('./settings_img/iconfinder_arrow-down-01_186411.png');
+  background-size: 17px;
+  background-repeat: no-repeat;
+  background-position-y: 11px;
+  background-position-x: 95%;
+}
+
+.form2_child span {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #4a5073;
+}
+
+
+.saveBtn {
+  width: 85px;
+  height: 41px;
+  margin-top: 15px;
+  font-size: 1rem;
+  border-radius: .5rem;
+  outline: none;
+  color: #fff;
+  background-color: #262b40;
+  border-color: #262b40;
+  box-shadow: inset 0 1px 0 hsl(0deg, 0%, 100% / 15%), 0 1px 1px rgb(46, 54, 80 / 8%);
+}
+
+.saveBtn:hover {
+  cursor: pointer;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+.saveBtn:focus {
+  box-shadow: inset 0 1px 0 hsl(0deg, 0%, 100% / 15%), 0 1px 1px rgb(46, 54, 80 / 8%), 0 0 0 0.1rem rgb(71, 75, 93 / 50%);
+
+}
+
+.settingsMain_rightContent {
+  height: 691px;
+  width: 520px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: column;
+  position: relative;
+}
+
+.rightContent_Profile {
+  width: 100%;
+  height: 457px;
+  border: .0625rem solid rgba(46, 54, 80, .125);
+  border-radius: 10px;
+  background-color: white;
+}
+
+.rightContent_selectPhoto {
+  width: 100%;
+  height: 162px;
+  border: .0625rem solid rgba(46, 54, 80, .125);
+  border-radius: 10px;
+  background-color: white;
+}
+
+.profile_backgroundPhoto {
+  width: 100%;
+  height: 200px;
+  background-image: url('https://images.unsplash.com/photo-1529465230221-a0d10e46fcbb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHByb2dyYW1taW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
+  background-size: cover;
+  background-position-y: -45px;
+
+}
+
+.profile_UserPhoto {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-image: url('./settings_img/user.jpg');
+  background-size: 450px;
+  background-position-x: -113px;
+  background-position-y: -105px;
+  position: absolute;
+  border: 2px solid white;
+  top: 87px;
+  left: 37%;
+}
+
+.profile_backgroundPhoto {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.profile_info {
+  width: 100%;
+  padding-top: 15%;
+  text-align: center;
+  font-size: 1rem;
+  color: #262b40;
+}
+
+.profile_info .userName {
+  line-height: 1.3;
+  font-size: 1.25rem;
+  color: #262b40;
+  margin-bottom: 10px;
+}
+
+.profile_info p {
+  margin-bottom: 15px;
+}
+
+.btnConnect {
+  width: 96px;
+  height: 31px;
+  font-size: .875rem;
+  border-radius: .5rem;
+  color: #fff;
+  background-color: #1e2233;
+  border-color: #1d2030;
+  margin-right: 15px;
+  padding-left: 10px;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btnSendMessage {
+  width: 110px;
+  height: 31px;
+  border: none;
+  border-radius: .5rem;
+  color: #262b40;
+  background-color: #81e1fc;
+  border-color: #71defb;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btnConnect:hover {
+  cursor: pointer;
+}
+
+.btnSendMessage:hover {
+  cursor: pointer;
+}
+
+.btnConnect:active {
+  transform: scale(0.9);
+}
+
+.btnSendMessage:active {
+  transform: scale(0.9);
+}
+
+.btnConnect:focus {
+  box-shadow: inset 0 1px 0 hsl(0deg, 0%, 100% / 15%), 0 1px 1px rgb(46, 54, 80 / 8%), 0 0 0 0.1rem rgb(71, 75, 93 / 50%);
+}
+
+.btnSendMessage:focus {
+  box-shadow: inset 0 3px 5px rgb(46, 54, 80 / 13%), 0 0 0 0.1rem rgb(88, 192, 223 / 50%);
+}
+
+.rightContent_info {
+  display: flex;
+}
+
+.rightContent_selectPhoto {
+  width: 100%;
+  padding: 15px 0px 0px 25px;
+}
+
+.rightContent_selectPhoto h5 {
+  display: inline-block;
+  font-size: 1.25rem;
+  color: #262b40;
+  margin-bottom: 20px;
+}
+
+.selectedPhoto {
+  width: 72px;
+  height: 72px;
+  background-image: url('./settings_img/user.jpg');
+  background-size: 300px;
+  background-position-y: -72px;
+  background-position-x: -84px;
+  border-radius: 10px;
+}
+
+.photoFormat {
+  height: 62px;
+  padding: 13px 0px 0px 50px;
+  color: #262b40 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.photoFormat::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url('./settings_img/iconfinder_General_Office_14_2530830.png');
+  background-size: cover;
+  left: 10px;
+  top: 23px;
+}

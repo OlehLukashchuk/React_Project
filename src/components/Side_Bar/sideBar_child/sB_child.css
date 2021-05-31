@@ -2,18 +2,21 @@
   width: 212px;
   height: 46px;
   padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: white;
   font-size: 1rem;
   border: .0625rem solid transparent;
   border-radius: 5px;
   margin-bottom: .2rem;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
 }
 
 .arrow {
-  background-image: url('../sideBar_child//sb_child_logo/arrow.png');
+  background-image: url("../sideBar_child//sb_child_logo/arrow.png");
   background-size: 20px;
   background-repeat: no-repeat;
   background-position-y: 12px;
@@ -26,10 +29,11 @@
   background-color: #333353;
 }
 
-.active{
+.active {
   border: .0625rem solid #727490;
   background-color: #333353;
 }
+
 .activeSb:hover {
   cursor: pointer;
 }
@@ -53,3 +57,4 @@ img {
   right: 14px;
   border-radius: 12px;
 }
+/*# sourceMappingURL=Sb_child.css.map */

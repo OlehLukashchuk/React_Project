@@ -1,7 +1,13 @@
-import React from "react";
-import "../Search/Search.css";
+import React, { memo } from "react";
 
-function Search(props : any) {
+import "../Search/Search.scss";
+
+interface SearchProps{
+  class : string,
+  inputSize : string
+}
+
+export const Search = memo((props: SearchProps) => {
   return (
     <div className={props.class}>
       <span className="inputLogo"></span>
@@ -12,21 +18,4 @@ function Search(props : any) {
       ></input>
     </div>
   );
-}
-
-// class Search extends React.PureComponent {
-//   render() {
-//     return (
-//       <div className={props.class}>
-//         <span className="inputLogo"></span>
-//         <input
-//           type="text"
-//           placeholder="Search"
-//           className={props.inputSize}
-//         ></input>
-//       </div>
-//     );
-//   }
-// }
-
-export default React.memo(Search);
+});

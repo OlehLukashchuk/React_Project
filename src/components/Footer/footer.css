@@ -3,6 +3,8 @@ footer {
   height: 121px;
   position: relative;
   padding: 48px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -14,8 +16,12 @@ footer {
 .footRight {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 a {
@@ -24,6 +30,8 @@ a {
 
 ul {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -41,7 +49,7 @@ ul a:hover {
   width: 118px;
   height: 40px;
   background-color: white;
-  background-image: url('../Footer/footer_img/iconfinder_SEO_cogwheels_setting_969265.png');
+  background-image: url("../Footer/footer_img/iconfinder_SEO_cogwheels_setting_969265.png");
   background-size: 28px;
   background-position-y: 7px;
   background-position-x: 5px;
@@ -50,9 +58,15 @@ ul a:hover {
   position: fixed;
   bottom: 0;
   right: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -65,3 +79,4 @@ ul a:hover {
   cursor: pointer;
   background-color: lightgray;
 }
+/*# sourceMappingURL=Footer.css.map */

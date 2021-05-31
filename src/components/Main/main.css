@@ -1,11 +1,10 @@
 @font-face {
   font-family: 'Nunito-SemiBold';
-  src: url('../Main/main_fonts/NunitoSans-SemiBold.ttf')
+  src: url("../Main/main_fonts/NunitoSans-SemiBold.ttf");
 }
 
-
 main {
-  width: 100%-260px;
+  width: calc(100%-260px);
   height: 100vh;
   margin-left: 260px;
   padding: 0px 16px 0px 16px;
@@ -15,9 +14,15 @@ main {
   width: 100%;
   height: 152px;
   padding: 24px 0px 24px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .transactionNeck__left {
@@ -34,6 +39,8 @@ main {
 ol {
   width: 100%;
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: .875rem;
 }
@@ -106,6 +113,7 @@ p {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border-right: none;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -117,6 +125,7 @@ p {
   border: 1px solid #373535;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -136,15 +145,16 @@ p {
   width: 100%;
   height: 44px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 1.5rem !important;
 }
 
-
 .settingsLogo {
   width: 23px;
   height: 23px;
-  background-image: url('../Main/main_img/iconfinder_ic_settings_48px_3669250.png');
+  background-image: url("../Main/main_img/iconfinder_ic_settings_48px_3669250.png");
   background-size: cover;
   background-repeat: no-repeat;
   margin-top: 5px;
@@ -153,6 +163,11 @@ p {
 }
 
 .loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+/*# sourceMappingURL=Main.css.map */

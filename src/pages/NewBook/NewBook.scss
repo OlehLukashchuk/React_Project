@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url('../../fonts/Roboto-Medium.ttf')
+}
+
+.addContainer form {
+  width: 70%;
+  height: 375px;
+  margin-top: 26px;
+  margin-left: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: white;
+
+}
+
+.addContainer  form input[type="text"] {
+  width:350px;
+  height: 40px;
+  background: transparent;
+  color: white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid gray;
+  padding-left: 10px;
+  border-radius: 0px;
+  font-family: 'Roboto-Medium';
+  font-size: 20px;
+  color: black;
+  outline: none;
+}
+
+::placeholder {
+  color: gray;
+}
+
+.addContainer  form span {
+  font-size: 25px;
+  font-family: 'Roboto-Medium';
+  color: black;
+}
+
+.addContainer {
+  display: flex;
+  padding: 50px;
+}
+
+.addPoster {
+  height: 430px;
+  width: 290px;
+  background-color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.addContainer_child {
+  width: 530px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+}
+
+
+.addContainer  form .saveBtn {
+  height: 35px;
+  width: 80px;
+  position: absolute;
+  bottom: 0px;
+  right: 300px;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  transition: background 2s ease;
+  box-shadow: 0px 0px 5px 1px black;
+
+}
+
+.saveBtn:hover {
+  cursor: pointer;
+}
+
+.saveBtn:active {
+  transform: scale(0.9)
+}

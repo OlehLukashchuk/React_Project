@@ -1,0 +1,59 @@
+.inputContainer{
+  width:318px;
+  height:42px;
+  display:flex;
+}
+
+.small{
+  width: 280px;
+  height: 100%;
+  background-color: white;
+  border: 1px solid #d8d8d8;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.large{
+  width: 483px;
+  height: 100%;
+  background-color: white;
+  border: 1px solid #d8d8d8;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.inputLogo{
+  display:flex;
+  width:38px;
+  height:100%;
+  padding: 8.8px 12px 8.8px 12px;
+  border-bottom: 1px solid #d8d8d8;
+  border-top: 1px solid #d8d8d8;
+  border-left: 1px solid #d8d8d8;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: white;
+  background-image: url(../Search/search_logo/SearchLogo.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position-x: 10px;
+  background-position-y: 10px;
+}
+
+.largeContainer{
+  width:521px;
+  height:42px;
+  display:flex;
+}
+

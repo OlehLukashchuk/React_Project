@@ -1,6 +1,7 @@
-import React from "react";
-import "./Sb_child.css";
+import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
+
+import "./Sb_child.scss";
 
 interface ItemType {
   icon: string;
@@ -13,8 +14,8 @@ interface PropsType {
   item: ItemType;
 }
 
-function SbChild(props: PropsType) {
-  console.log(props);
+export const SbChild = memo((props: PropsType) => {
+  
   return (
     <NavLink
       className={`SbChild ${props.arrow ? props.arrow : ""}`}
@@ -26,20 +27,4 @@ function SbChild(props: PropsType) {
       <span>{props.item.text}</span>
     </NavLink>
   );
-}
-
-// class SbChild extends React.PureComponent {
-//   constructor(props) {
-//    super(props);
-//   }
-//   render() {
-//     return (
-//       <NavLink className={`SbChild ${this.props.arrow ? this.props.arrow : ''}`} to={this.props.link ? this.props.link : 'defaultLink'}>
-//         <img src={this.props.item.icon} alt="someImg"></img>
-//         <span>{this.props.item.text}</span>
-//       </NavLink>
-//     );
-//   }
-// }
-
-export default React.memo(SbChild);
+});

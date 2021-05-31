@@ -1,8 +1,9 @@
-import React from "react";
-import Search from "../Search/Search";
-import "../Header/Header.css";
+import React, { memo } from "react";
 
-function Header() {
+import {Search} from "../Search";
+import "../Header/Header.scss";
+
+export const Header = memo(() => {
   return (
     <header>
       <Search class="inputContainer" inputSize="small" />
@@ -13,21 +14,4 @@ function Header() {
       </div>
     </header>
   );
-}
-
-// class Header extends React.PureComponent {
-//   render() {
-//     return (
-//       <header>
-//         <Search class="inputContainer" inputSize="small" />
-//         <div className="rightHeader">
-//           <div className="bellLogo"></div>
-//           <div className="headerImg"></div>
-//           <span>Bonnie Green</span>
-//         </div>
-//       </header>
-//     );
-//   }
-// }
-
-export default React.memo(Header);
+});

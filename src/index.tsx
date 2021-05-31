@@ -1,26 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-// import { createBrowserHistory } from "history";
 import { Provider } from "react-redux";
-import { AddBook, JwtToken } from "./store/Reducer";
-import { createStore } from "redux";
-import { combineReducers, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
 
-const store = createStore(
-  combineReducers({
-    addBook: AddBook,
-    JwtToken: JwtToken,
-  }),
-  applyMiddleware(thunk)
-);
-// const history = createBrowserHistory();
-
-// ЗАПИТАТИ про історію.
+import {App} from "./App";
+import "./index.scss";
+import store from "./store/Create-store";
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <Provider store={store}>

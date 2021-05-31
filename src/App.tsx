@@ -1,17 +1,8 @@
-import React from "react";
-import Main from './components/Main/Main'
-import "../src/App.css";
+import React, { memo } from "react";
 
-function App() {
+import { Main } from "./components/Main";
+import "../src/App.scss";
+
+export const App = memo(() => {
   return <Main />;
-}
-
-// class App extends React.PureComponent {
-//   render() {
-//     return (
-//     <Main/>
-//     )
-//   }
-// }
-
-export default React.memo(App);
+});
