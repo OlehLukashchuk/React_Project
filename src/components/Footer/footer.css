@@ -39,6 +39,7 @@ footer .footRight ul a {
   margin-right: 8px;
   padding: 0 8px;
   color: #262b40;
+  text-decoration: none;
 }
 
 footer .footRight ul a:hover {
