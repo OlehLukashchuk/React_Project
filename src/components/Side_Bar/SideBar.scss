@@ -1,17 +1,21 @@
-aside{
-  width:260px;
-  height:100vh;
-  background-color: #262b40!important;
+@import '../../sass/utilities/mixins';
+
+aside {
+  @include wH(260px, 100vh);
+  background-color: #262b40 !important;
   position: fixed;
   left: 0;
   padding: 16px 24px 0px 24px;
-  display:flex;
+  display: flex;
   flex-direction: column;
-}
 
-hr{
-  height: .0625rem;
-  margin: 16px 0px 16px 0px;
-  border-color: #4c5680!important;
+  a {
+    text-decoration: none;
+  }
 
+  hr {
+    height: .0625rem;
+    margin: 16px 0px 16px 0px;
+    border-color: #4c5680 !important;
+  }
 }

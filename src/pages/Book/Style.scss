@@ -1,32 +1,24 @@
-.loader {
-  display: flex;
-  justify-content: center;
-}
-
-ol li:last-child {
-
-  text-align: center;
-
-}
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/variables';
+@import '../../sass/utilities/extends';
 
 .addBook {
-  height: 42px;
-  width: 78px;
+  @extend .buttonStyle;
+  @include wH(78px, 42px);
+
   position: absolute;
   left: 600px;
-  outline: none;
-  border: 1px solid gray;
   border-radius: 10px;
-  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 15px;
-  color: black;
+  color: $black;
+  text-decoration: none;
 }
 
 .addBook:hover {
-  cursor: pointer;
+  @extend .buttonHover;
 }
 
 .addBook:active {
@@ -34,74 +26,69 @@ ol li:last-child {
 }
 
 .booksTable {
-  width: 100%;
-  height: 400px;
-}
+  @include wH(100%, 400px);
 
-.MuiDataGrid-root .MuiDataGrid-cellLeft a {
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  background-image: url('../Book/book_img//iconfinder_document_text_edit_103514.png');
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position-x: 7px;
-  background-position-y: 6px;
-  box-shadow: 0px 0px 3px 0px black;
-  font-size: 13px;
-  text-transform: uppercase;
-  text-align: center;
-}
+  .MuiDataGrid-root .MuiDataGrid-cellLeft a {
+    @include wH(30px, 30px);
 
-.MuiDataGrid-root .MuiDataGrid-cellLeft a:hover {
-  opacity: 0.5;
-}
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    background: url('../Book/book_img//iconfinder_document_text_edit_103514.png') no-repeat 7px 6px /20px;
+    box-shadow: 0px 0px 3px 0px $black;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: center;
+  }
 
-.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCellRight .MuiDataGrid-colCellTitleContainer {
-  justify-content: start;
-  padding-left: 8px;
-}
+  .MuiDataGrid-root .MuiDataGrid-cellLeft a:hover {
+    opacity: 0.5;
+  }
 
-.MuiDataGrid-root .MuiDataGrid-colCellTitleContainer {
-  justify-content: start;
-}
+  .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCellRight .MuiDataGrid-colCellTitleContainer {
+    justify-content: start;
+    padding-left: 8px;
+  }
 
-.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
-  text-align: start;
-  justify-content: start;
-  outline: none;
-}
+  .MuiDataGrid-root .MuiDataGrid-colCellTitleContainer {
+    justify-content: start;
+  }
 
-.MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellRight {
-  text-align: center;
-}
+  .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
+    text-align: start;
+    justify-content: start;
+    outline: none;
+  }
 
-.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCell:focus,
-.MuiDataGrid-root .MuiDataGrid-cell:focus {
-  outline: none;
-}
+  .MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellRight {
+    text-align: center;
+  }
 
-.MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
-  text-align: start;
-}
+  .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCell:focus,
+  .MuiDataGrid-root .MuiDataGrid-cell:focus {
+    outline: none;
+  }
 
-.MuiDataGrid-root .MuiDataGrid-cellLeft a:active {
-  transform: scale(.9);
+  .MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
+    text-align: start;
+  }
 
-}
+  .MuiDataGrid-root .MuiDataGrid-cellLeft a:active {
+    transform: scale(.9);
 
-.MuiDataGrid-root .MuiDataGrid-cellLeft a:hover {
-  cursor: pointer;
-}
+  }
 
-.MuiDataGrid-root .MuiDataGrid-cellWithRenderer {
-  justify-content: center;
-}
+  .MuiDataGrid-root .MuiDataGrid-cellLeft a:hover {
+    cursor: pointer;
+  }
 
-.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCellMoving {
-  background-color: transparent;
+  .MuiDataGrid-root .MuiDataGrid-cellWithRenderer {
+    justify-content: center;
+  }
+
+  .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCellMoving {
+    background-color: transparent;
+  }
 }

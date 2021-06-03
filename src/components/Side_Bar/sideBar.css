@@ -14,7 +14,11 @@ aside {
           flex-direction: column;
 }
 
-hr {
+aside a {
+  text-decoration: none;
+}
+
+aside hr {
   height: .0625rem;
   margin: 16px 0px 16px 0px;
   border-color: #4c5680 !important;

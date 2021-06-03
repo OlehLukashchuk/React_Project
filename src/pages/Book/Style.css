@@ -1,25 +1,36 @@
-.loader {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.buttonStyle, .addBook {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #373535;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-ol li:last-child {
-  text-align: center;
+.buttonHover, .addBook:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.inputStyle {
+  background-color: white;
+  border: 1px solid #d8d8d8;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .addBook {
-  height: 42px;
   width: 78px;
+  height: 42px;
   position: absolute;
   left: 600px;
-  outline: none;
-  border: 1px solid gray;
   border-radius: 10px;
-  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,10 +42,7 @@ ol li:last-child {
           align-items: center;
   font-size: 15px;
   color: black;
-}
-
-.addBook:hover {
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .addBook:active {
@@ -47,7 +55,7 @@ ol li:last-child {
   height: 400px;
 }
 
-.MuiDataGrid-root .MuiDataGrid-cellLeft a {
+.booksTable .MuiDataGrid-root .MuiDataGrid-cellLeft a {
   width: 30px;
   height: 30px;
   margin-left: 10px;
@@ -55,11 +63,7 @@ ol li:last-child {
   border: none;
   border-radius: 5px;
   color: white;
-  background-image: url("../Book/book_img//iconfinder_document_text_edit_103514.png");
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position-x: 7px;
-  background-position-y: 6px;
+  background: url("../Book/book_img//iconfinder_document_text_edit_103514.png") no-repeat 7px 6px/20px;
   -webkit-box-shadow: 0px 0px 3px 0px black;
           box-shadow: 0px 0px 3px 0px black;
   font-size: 13px;
@@ -67,24 +71,24 @@ ol li:last-child {
   text-align: center;
 }
 
-.MuiDataGrid-root .MuiDataGrid-cellLeft a:hover {
+.booksTable .MuiDataGrid-root .MuiDataGrid-cellLeft a:hover {
   opacity: 0.5;
 }
 
-.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCellRight .MuiDataGrid-colCellTitleContainer {
+.booksTable .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCellRight .MuiDataGrid-colCellTitleContainer {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
   padding-left: 8px;
 }
 
-.MuiDataGrid-root .MuiDataGrid-colCellTitleContainer {
+.booksTable .MuiDataGrid-root .MuiDataGrid-colCellTitleContainer {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
 }
 
-.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
+.booksTable .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
   text-align: start;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -92,35 +96,35 @@ ol li:last-child {
   outline: none;
 }
 
-.MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellRight {
+.booksTable .MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellRight {
   text-align: center;
 }
 
-.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCell:focus,
-.MuiDataGrid-root .MuiDataGrid-cell:focus {
+.booksTable .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCell:focus,
+.booksTable .MuiDataGrid-root .MuiDataGrid-cell:focus {
   outline: none;
 }
 
-.MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
+.booksTable .MuiDataGrid-root .MuiDataGrid-windowContainer .MuiDataGrid-cellLeft {
   text-align: start;
 }
 
-.MuiDataGrid-root .MuiDataGrid-cellLeft a:active {
+.booksTable .MuiDataGrid-root .MuiDataGrid-cellLeft a:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
 
-.MuiDataGrid-root .MuiDataGrid-cellLeft a:hover {
+.booksTable .MuiDataGrid-root .MuiDataGrid-cellLeft a:hover {
   cursor: pointer;
 }
 
-.MuiDataGrid-root .MuiDataGrid-cellWithRenderer {
+.booksTable .MuiDataGrid-root .MuiDataGrid-cellWithRenderer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCellMoving {
+.booksTable .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-colCellMoving {
   background-color: transparent;
 }
 /*# sourceMappingURL=Style.css.map */

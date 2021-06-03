@@ -10,15 +10,17 @@ interface ItemType {
 
 interface PropsType {
   arrow?: string;
+  pro?: string;
   link: string;
   item: ItemType;
 }
 
 export const SbChild = memo((props: PropsType) => {
-  
   return (
     <NavLink
-      className={`SbChild ${props.arrow ? props.arrow : ""}`}
+      className={`SbChild ${props.arrow ? props.arrow : ""} ${
+        props.pro ? props.pro : ""
+      }`}
       to={{
         pathname: props.link ? props.link : "defaultLink",
       }}

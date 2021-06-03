@@ -27,7 +27,7 @@ export const Volt = memo(({ history }: VoltProps) => {
 
     const decodedJwt = jwt_decode(getItem);
     dispatch({ type: ADD_TOKEN, value: decodedJwt });
-  }, [dispatch]);
+  }, []);
 
   useMemo(() => {
     addToken();

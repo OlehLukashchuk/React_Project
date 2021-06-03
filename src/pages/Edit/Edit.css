@@ -1,3 +1,30 @@
+.buttonStyle {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #373535;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.buttonHover, .bg .editContainer form .saveBtn:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.inputStyle {
+  background-color: white;
+  border: 1px solid #d8d8d8;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 @font-face {
   font-family: 'Roboto-Medium';
   src: url("../../fonts/Roboto-Medium.ttf");
@@ -9,17 +36,27 @@
   background-size: cover;
   margin-top: 10px;
   opacity: 0;
-  -webkit-animation-name: showBgImage;
-          animation-name: showBgImage;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  -webkit-animation: showBgImage 4s 1 forwards;
+          animation: showBgImage 4s 1 forwards;
 }
 
-.editContainer form {
+.bg .editContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px;
+}
+
+.bg .editContainer .poster {
+  width: 290px;
+  height: 430px;
+  background: transparent no-repeat center center /cover;
+  opacity: 0;
+  -webkit-animation: imgAnimation 4s 2s 1 forwards;
+          animation: imgAnimation 4s 2s 1 forwards;
+}
+
+.bg .editContainer form {
   width: 70%;
   height: 375px;
   margin-top: 26px;
@@ -39,19 +76,11 @@
           justify-content: space-between;
   color: white;
   opacity: 0;
-  -webkit-animation-name: showDescription;
-          animation-name: showDescription;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  -webkit-animation: showDescription 4s 2s 1 forwards;
+          animation: showDescription 4s 2s 1 forwards;
 }
 
-.editContainer form input[type="text"] {
+.bg .editContainer form input[type="text"] {
   width: 0px;
   height: 40px;
   background: transparent;
@@ -66,67 +95,17 @@
   font-size: 20px;
   color: white;
   text-shadow: 0px 0px 5px black;
-  -webkit-animation-name: inputsAni;
-          animation-name: inputsAni;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  -webkit-animation: inputsAni 3s 2s 1 forwards;
+          animation: inputsAni 3s 2s 1 forwards;
 }
 
-::-webkit-input-placeholder {
-  color: gray;
-}
-
-:-ms-input-placeholder {
-  color: gray;
-}
-
-::-ms-input-placeholder {
-  color: gray;
-}
-
-::placeholder {
-  color: gray;
-}
-
-.editContainer form span {
+.bg .editContainer form span {
   font-size: 25px;
   text-shadow: 0px 0px 5px black;
   font-family: 'Roboto-Medium';
 }
 
-.editContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 50px;
-}
-
-.poster {
-  height: 430px;
-  width: 290px;
-  background-color: transparent;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
-  -webkit-animation-name: imgAnimation;
-          animation-name: imgAnimation;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.editContainer_child {
+.bg .editContainer form .editContainer_child {
   width: 530px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,18 +118,9 @@
           align-items: center;
 }
 
-.loader {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.editContainer form .saveBtn {
-  height: 35px;
+.bg .editContainer form .saveBtn {
   width: 150px;
+  height: 35px;
   position: absolute;
   bottom: 330px;
   right: 28%;
@@ -161,29 +131,18 @@
   font-size: 20px;
   color: white;
   text-align: center;
+  text-decoration: none;
   -webkit-transition: background 2s ease;
   transition: background 2s ease;
   text-shadow: 0px 0px 5px black;
   -webkit-box-shadow: 0px 0px 5px 1px black;
           box-shadow: 0px 0px 5px 1px black;
   opacity: 0;
-  -webkit-animation-name: btnAni;
-          animation-name: btnAni;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  -webkit-animation: btnAni 3s 2s 1 forwards;
+          animation: btnAni 3s 2s 1 forwards;
 }
 
-.saveBtn:hover {
-  cursor: pointer;
-}
-
-.saveBtn:active {
+.bg .editContainer form .saveBtn:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }

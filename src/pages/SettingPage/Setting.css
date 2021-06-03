@@ -1,6 +1,33 @@
+.buttonStyle {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #373535;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.buttonHover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.inputStyle {
+  background-color: white;
+  border: 1px solid #d8d8d8;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 .settings_neck {
-  height: 43.59px;
   width: 100%;
+  height: 43.59px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,15 +37,10 @@
   margin: 28px 0 23px;
 }
 
-.settings_newBtn {
-  height: 100%;
+.settings_neck .settings_newBtn {
   width: 82px;
-  background-color: #61dbfc;
-  background-image: url("./settings_img/iconfinder_plus_214640.png");
-  background-size: 16px;
-  background-repeat: no-repeat;
-  background-position-y: 12px;
-  background-position-x: 13px;
+  height: 100%;
+  background: #61dbfc url("./settings_img/iconfinder_plus_214640.png") no-repeat 13px 12px/16px;
   outline: none;
   border: none;
   border-radius: 10px;
@@ -30,16 +52,16 @@
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-.settings_newBtn:focus {
+.settings_neck .settings_newBtn:focus {
   -webkit-box-shadow: inset 0 1px 0 #111111, 0 1px 1px #2e360a, 0 0 0 0.1rem #58c004;
           box-shadow: inset 0 1px 0 #111111, 0 1px 1px #2e360a, 0 0 0 0.1rem #58c004;
 }
 
-.settings_newBtn:hover {
+.settings_neck .settings_newBtn:hover {
   cursor: pointer;
 }
 
-.settings_reports {
+.settings_neck .settings_reports {
   width: 121.55px;
   height: 100%;
   background-color: #262b3f;
@@ -55,23 +77,21 @@
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-.settings_reports:focus {
+.settings_neck .settings_reports:focus {
   -webkit-box-shadow: inset 0 3px 5px #2e3606, 0 0 0 0.1rem #474b02;
           box-shadow: inset 0 3px 5px #2e3606, 0 0 0 0.1rem #474b02;
 }
 
-.settings_reports:hover {
+.settings_neck .settings_reports:hover {
   cursor: pointer;
 }
 
-.settings_reports:after {
+.settings_neck .settings_reports:after {
   content: '';
-  position: absolute;
   width: 16px;
   height: 16px;
-  background-image: url("./settings_img/down_arrow.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: absolute;
+  background: url("./settings_img/down_arrow.png") no-repeat center center/cover;
   right: 11px;
   top: 14px;
 }
@@ -88,7 +108,7 @@
           justify-content: space-between;
 }
 
-.settingsMain_leftContent {
+.settings_container .settingsMain_leftContent {
   width: 1066px;
   height: 691px;
   background-color: white;
@@ -97,13 +117,13 @@
   padding: 25px 24px 0 24px;
 }
 
-.settingsMain_leftContent h5 {
+.settings_container .settingsMain_leftContent h5 {
   width: 100%;
   color: #262b40;
   font-size: 1.25rem;
 }
 
-.settingsMain_leftContent .form1 {
+.settings_container .settingsMain_leftContent .form1 {
   width: 100%;
   height: 300px;
   margin-top: 25px;
@@ -117,19 +137,19 @@
       flex-wrap: wrap;
 }
 
-.form1_child {
+.settings_container .settingsMain_leftContent .form1_child {
   width: 494px;
   height: 44px;
 }
 
-.form1_child span {
+.settings_container .settingsMain_leftContent .form1_child span {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
   color: #4a5073;
 }
 
-.form1_child input[type="text"] {
+.settings_container .settingsMain_leftContent .form1_child input[type="text"] {
   width: 100%;
   height: 100%;
   margin-top: 15px;
@@ -144,7 +164,7 @@
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-.form1_child select {
+.settings_container .settingsMain_leftContent .form1_child select {
   width: 100%;
   height: 100%;
   margin-top: 15px;
@@ -162,30 +182,26 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-image: url("./settings_img/iconfinder_arrow-down-01_186411.png");
-  background-size: 17px;
-  background-repeat: no-repeat;
-  background-position-y: 11px;
-  background-position-x: 97%;
+  background: url("./settings_img/iconfinder_arrow-down-01_186411.png") no-repeat 97% 11px/17px;
 }
 
-.form1_child input[type="text"]::-webkit-input-placeholder {
+.settings_container .settingsMain_leftContent .form1_child input[type="text"]::-webkit-input-placeholder {
   color: #908ea7;
 }
 
-.form1_child input[type="text"]:-ms-input-placeholder {
+.settings_container .settingsMain_leftContent .form1_child input[type="text"]:-ms-input-placeholder {
   color: #908ea7;
 }
 
-.form1_child input[type="text"]::-ms-input-placeholder {
+.settings_container .settingsMain_leftContent .form1_child input[type="text"]::-ms-input-placeholder {
   color: #908ea7;
 }
 
-.form1_child input[type="text"]::placeholder {
+.settings_container .settingsMain_leftContent .form1_child input[type="text"]::placeholder {
   color: #908ea7;
 }
 
-.form1_child input[type="text"]:focus {
+.settings_container .settingsMain_leftContent .form1_child input[type="text"]:focus {
   color: #66799e;
   background-color: #fff;
   border-color: #566190;
@@ -194,27 +210,49 @@
           box-shadow: inset 0 1px 2px #2e360a, 0 0 0 0.1rem #262b03;
 }
 
-.birthday .MuiGrid-container {
+.settings_container .settingsMain_leftContent .form1 .birthday .MuiGrid-container {
   width: 494px;
 }
 
-.birthday .MuiGrid-container .MuiFormControl-root {
+.settings_container .settingsMain_leftContent .form1 .birthday .MuiGrid-container .MuiFormControl-root {
   width: 100%;
-}
-
-.MuiGrid-root .MuiFormControl-root {
   border: .0625rem solid #d1d7e0;
   border-radius: 10px;
+  -webkit-transition: -webkit-box-shadow .15s ease-in-out;
+  transition: -webkit-box-shadow .15s ease-in-out;
+  transition: box-shadow .15s ease-in-out;
+  transition: box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-.birthday .MuiGrid-container .MuiFormControl-root .MuiInput-root input[type="text"] {
+.settings_container .settingsMain_leftContent .form1 .birthday .MuiGrid-container .MuiFormControl-root .MuiInput-underline::before {
+  border: none;
+}
+
+.settings_container .settingsMain_leftContent .form1 .birthday .MuiGrid-container .MuiFormControl-root .MuiInput-underline::after {
+  border: none;
+}
+
+.settings_container .settingsMain_leftContent .form1 .birthday .MuiGrid-container .MuiFormControl-root .MuiInput-underline:hover:not(.Mui-disabled)::before {
+  border-bottom: none;
+}
+
+.settings_container .settingsMain_leftContent .form1 .birthday .MuiGrid-container .MuiFormControl-root p {
+  margin-left: 15px;
+}
+
+.settings_container .settingsMain_leftContent .form1 .birthday .MuiGrid-container .MuiFormControl-root:hover {
+  -webkit-box-shadow: inset 0 1px 2px #2e360a, 0 0 0 0.1rem #262b03;
+          box-shadow: inset 0 1px 2px #2e360a, 0 0 0 0.1rem #262b03;
+}
+
+.settings_container .settingsMain_leftContent .form1 .birthday .MuiGrid-container .MuiInput-root input[type="text"] {
   height: 44px;
   margin: 0px;
   padding: 0px 0px 0px 13px;
   border: none;
 }
 
-.birthday .MuiGrid-container .MuiFormControl-root .MuiInput-root input[type="text"]:focus {
+.settings_container .settingsMain_leftContent .form1 .birthday .MuiGrid-container .MuiInput-root input[type="text"]:focus {
   color: #66799e;
   background-color: inset;
   border-color: inset;
@@ -223,35 +261,7 @@
           box-shadow: none;
 }
 
-.MuiFormControl-root {
-  -webkit-transition: -webkit-box-shadow .15s ease-in-out;
-  transition: -webkit-box-shadow .15s ease-in-out;
-  transition: box-shadow .15s ease-in-out;
-  transition: box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-}
-
-.MuiFormControl-root:hover {
-  -webkit-box-shadow: inset 0 1px 2px #2e360a, 0 0 0 0.1rem #262b03;
-          box-shadow: inset 0 1px 2px #2e360a, 0 0 0 0.1rem #262b03;
-}
-
-.MuiFormControl-root .MuiInput-underline::before {
-  border: none;
-}
-
-.MuiFormControl-root .MuiInput-underline::after {
-  border: none;
-}
-
-.MuiFormControl-root .MuiInput-underline:hover:not(.Mui-disabled)::before {
-  border-bottom: none;
-}
-
-.MuiFormControl-root p {
-  margin-left: 15px;
-}
-
-.settingsMain_leftContent .form2 {
+.settings_container .settingsMain_leftContent .form2 {
   width: 100%;
   height: 185px;
   margin-top: 25px;
@@ -265,27 +275,22 @@
       flex-wrap: wrap;
 }
 
-.form2_child:first-child {
+.settings_container .settingsMain_leftContent .form2_child:first-child {
   width: 754px;
   height: 44px;
 }
 
-.form2_child:nth-child(2) {
+.settings_container .settingsMain_leftContent .form2_child:nth-child(2) {
   width: 234px;
   height: 44px;
 }
 
-.form2_child:nth-child(2) {
-  width: 234px;
-  height: 44px;
-}
-
-.form2_child:nth-child(n+3) {
+.settings_container .settingsMain_leftContent .form2_child:nth-child(n+3) {
   width: 322px;
   height: 44px;
 }
 
-.form2_child input[type="text"] {
+.settings_container .settingsMain_leftContent .form2_child input[type="text"] {
   width: 100%;
   height: 100%;
   margin-top: 15px;
@@ -300,23 +305,23 @@
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-.form2_child input[type="text"]::-webkit-input-placeholder {
+.settings_container .settingsMain_leftContent .form2_child input[type="text"]::-webkit-input-placeholder {
   color: #908ea7;
 }
 
-.form2_child input[type="text"]:-ms-input-placeholder {
+.settings_container .settingsMain_leftContent .form2_child input[type="text"]:-ms-input-placeholder {
   color: #908ea7;
 }
 
-.form2_child input[type="text"]::-ms-input-placeholder {
+.settings_container .settingsMain_leftContent .form2_child input[type="text"]::-ms-input-placeholder {
   color: #908ea7;
 }
 
-.form2_child input[type="text"]::placeholder {
+.settings_container .settingsMain_leftContent .form2_child input[type="text"]::placeholder {
   color: #908ea7;
 }
 
-.form2_child input[type="text"]:focus {
+.settings_container .settingsMain_leftContent .form2_child input[type="text"]:focus {
   color: #66799e;
   background-color: #fff;
   border-color: #566190;
@@ -325,7 +330,7 @@
           box-shadow: inset 0 1px 2px #2e360a, 0 0 0 0.1rem #262b03;
 }
 
-.form2_child select {
+.settings_container .settingsMain_leftContent .form2_child select {
   width: 322px;
   height: 100%;
   margin-top: 15px;
@@ -343,21 +348,17 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-image: url("./settings_img/iconfinder_arrow-down-01_186411.png");
-  background-size: 17px;
-  background-repeat: no-repeat;
-  background-position-y: 11px;
-  background-position-x: 95%;
+  background: url("./settings_img/iconfinder_arrow-down-01_186411.png") no-repeat 95% 11px/17px;
 }
 
-.form2_child span {
+.settings_container .settingsMain_leftContent .form2_child span {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
   color: #4a5073;
 }
 
-.saveBtn {
+.settings_container .settingsMain_leftContent .saveBtn {
   width: 85px;
   height: 41px;
   margin-top: 15px;
@@ -371,7 +372,7 @@
           box-shadow: inset 0 1px 0 #111111, 0 1px 1px #2e360a;
 }
 
-.saveBtn:hover {
+.settings_container .settingsMain_leftContent .saveBtn:hover {
   cursor: pointer;
   -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
@@ -379,14 +380,14 @@
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-.saveBtn:focus {
+.settings_container .settingsMain_leftContent .saveBtn:focus {
   -webkit-box-shadow: inset 0 1px 0 #111111, 0 1px 1px #2e360a, 0 0 0 0.1rem #474b02;
           box-shadow: inset 0 1px 0 #111111, 0 1px 1px #2e360a, 0 0 0 0.1rem #474b02;
 }
 
-.settingsMain_rightContent {
-  height: 691px;
+.settings_container .settingsMain_rightContent {
   width: 520px;
+  height: 691px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -398,7 +399,7 @@
   position: relative;
 }
 
-.rightContent_Profile {
+.settings_container .settingsMain_rightContent .rightContent_Profile, .settings_container .settingsMain_rightContent .rightContent_selectPhoto {
   width: 100%;
   height: 457px;
   border: 0.0625rem solid rgba(46, 54, 80, 0.125);
@@ -406,42 +407,15 @@
   background-color: white;
 }
 
-.rightContent_selectPhoto {
-  width: 100%;
-  height: 162px;
-  border: 0.0625rem solid rgba(46, 54, 80, 0.125);
-  border-radius: 10px;
-  background-color: white;
-}
-
-.profile_backgroundPhoto {
-  width: 100%;
+.settings_container .settingsMain_rightContent .rightContent_Profile .profile_backgroundPhoto, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .profile_backgroundPhoto {
+  width: 110%;
   height: 200px;
-  background-image: url("https://images.unsplash.com/photo-1529465230221-a0d10e46fcbb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHByb2dyYW1taW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");
-  background-size: cover;
-  background-position-y: -45px;
-}
-
-.profile_UserPhoto {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background-image: url("./settings_img/user.jpg");
-  background-size: 450px;
-  background-position-x: -113px;
-  background-position-y: -105px;
-  position: absolute;
-  border: 2px solid white;
-  top: 87px;
-  left: 37%;
-}
-
-.profile_backgroundPhoto {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  background: url("https://images.unsplash.com/photo-1529465230221-a0d10e46fcbb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHByb2dyYW1taW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80") no-repeat 0px -45px/cover;
 }
 
-.profile_info {
+.settings_container .settingsMain_rightContent .rightContent_Profile .profile_info, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .profile_info {
   width: 100%;
   padding-top: 15%;
   text-align: center;
@@ -449,18 +423,29 @@
   color: #262b40;
 }
 
-.profile_info .userName {
+.settings_container .settingsMain_rightContent .rightContent_Profile .profile_info .userName, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .profile_info .userName {
   line-height: 1.3;
   font-size: 1.25rem;
   color: #262b40;
   margin-bottom: 10px;
 }
 
-.profile_info p {
+.settings_container .settingsMain_rightContent .rightContent_Profile .profile_info p, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .profile_info p {
   margin-bottom: 15px;
 }
 
-.btnConnect {
+.settings_container .settingsMain_rightContent .rightContent_Profile .profile_UserPhoto, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .profile_UserPhoto {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: url("./settings_img/user.jpg") -113px -105px/450px;
+  position: absolute;
+  border: 2px solid white;
+  top: 87px;
+  left: 37%;
+}
+
+.settings_container .settingsMain_rightContent .rightContent_Profile .btnConnect, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .btnConnect {
   width: 96px;
   height: 31px;
   font-size: .875rem;
@@ -476,7 +461,7 @@
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-.btnSendMessage {
+.settings_container .settingsMain_rightContent .rightContent_Profile .btnSendMessage, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .btnSendMessage {
   width: 110px;
   height: 31px;
   border: none;
@@ -490,63 +475,61 @@
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-.btnConnect:hover {
+.settings_container .settingsMain_rightContent .rightContent_Profile .btnConnect:hover, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .btnConnect:hover {
   cursor: pointer;
 }
 
-.btnSendMessage:hover {
+.settings_container .settingsMain_rightContent .rightContent_Profile .btnSendMessage:hover, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .btnSendMessage:hover {
   cursor: pointer;
 }
 
-.btnConnect:active {
+.settings_container .settingsMain_rightContent .rightContent_Profile .btnConnect:active, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .btnConnect:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
 
-.btnSendMessage:active {
+.settings_container .settingsMain_rightContent .rightContent_Profile .btnSendMessage:active, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .btnSendMessage:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
 
-.btnConnect:focus {
+.settings_container .settingsMain_rightContent .rightContent_Profile .btnConnect:focus, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .btnConnect:focus {
   -webkit-box-shadow: inset 0 1px 0 #111111, 0 1px 1px #2e360a, 0 0 0 0.1rem #474b02;
           box-shadow: inset 0 1px 0 #111111, 0 1px 1px #2e360a, 0 0 0 0.1rem #474b02;
 }
 
-.btnSendMessage:focus {
+.settings_container .settingsMain_rightContent .rightContent_Profile .btnSendMessage:focus, .settings_container .settingsMain_rightContent .rightContent_selectPhoto .btnSendMessage:focus {
   -webkit-box-shadow: inset 0 3px 5px #2e3606, 0 0 0 0.1rem #58c004;
           box-shadow: inset 0 3px 5px #2e3606, 0 0 0 0.1rem #58c004;
 }
 
-.rightContent_info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.rightContent_selectPhoto {
+.settings_container .settingsMain_rightContent .rightContent_selectPhoto {
   width: 100%;
+  height: 162px;
   padding: 15px 0px 0px 25px;
 }
 
-.rightContent_selectPhoto h5 {
+.settings_container .settingsMain_rightContent .rightContent_selectPhoto h5 {
   display: inline-block;
   font-size: 1.25rem;
   color: #262b40;
   margin-bottom: 20px;
 }
 
-.selectedPhoto {
+.settings_container .settingsMain_rightContent .rightContent_selectPhoto .rightContent_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.settings_container .settingsMain_rightContent .rightContent_selectPhoto .rightContent_info .selectedPhoto {
   width: 72px;
   height: 72px;
-  background-image: url("./settings_img/user.jpg");
-  background-size: 300px;
-  background-position-y: -72px;
-  background-position-x: -84px;
+  background: url("./settings_img/user.jpg") -84px -72px/300px;
   border-radius: 10px;
 }
 
-.photoFormat {
+.settings_container .settingsMain_rightContent .rightContent_selectPhoto .rightContent_info .photoFormat {
   height: 62px;
   padding: 13px 0px 0px 50px;
   color: #262b40 !important;
@@ -563,13 +546,12 @@
   position: relative;
 }
 
-.photoFormat::before {
+.settings_container .settingsMain_rightContent .rightContent_selectPhoto .rightContent_info .photoFormat::before {
   content: "";
-  position: absolute;
   width: 30px;
   height: 30px;
-  background-image: url("./settings_img/iconfinder_General_Office_14_2530830.png");
-  background-size: cover;
+  position: absolute;
+  background: url("./settings_img/iconfinder_General_Office_14_2530830.png") center center/cover;
   left: 10px;
   top: 23px;
 }

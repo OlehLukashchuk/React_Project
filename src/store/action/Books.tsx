@@ -18,7 +18,6 @@ export default class BooksAction {
 
   static setBooks = (data: DataType) => {
     return (dispatch: AppDispatch) => {
-      console.log(data)
       db.collection("books")
         .doc(`${data.id}`)
         .set(data)

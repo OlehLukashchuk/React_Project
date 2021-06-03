@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import { NavLink } from "react-router-dom";
 
 import "../Footer/Footer.scss";
 import { Link } from "react-router-dom";
@@ -23,7 +24,7 @@ export const Footer = memo(() => {
         </ul>
       </div>
       <div className="footerSettings">
-        <span>Settings</span>
+        <NavLink to={{pathname :'settings' }}>Settings</NavLink>
       </div>
     </footer>
   );

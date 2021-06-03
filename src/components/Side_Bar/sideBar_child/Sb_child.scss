@@ -1,52 +1,54 @@
+@import '../../../sass/utilities/mixins';
+@import '../../../sass/utilities/variables';
+
 .SbChild {
-  width: 212px;
-  height: 46px;
+  @include wH(212px, 46px);
+
   padding: 10px;
   display: flex;
-  color: white;
+  color: $white;
   font-size: 1rem;
   border: .0625rem solid transparent;
   border-radius: 5px;
   margin-bottom: .2rem;
   transition: all 0.3s ease;
   position: relative;
+
+  img {
+    @include wH(22px, 22px);
+
+    margin-right: 14px;
+  }
+
 }
 
 .arrow {
-  background-image: url('../sideBar_child//sb_child_logo/arrow.png');
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position-y: 12px;
-  background-position-x: 180px;
+  background: url('../sideBar_child//sb_child_logo/arrow.png') no-repeat 180px 12px /20px;
+}
+
+
+.active {
+  border: .0625rem solid #727490;
+  background-color: $active;
 }
 
 .SbChild:hover {
   cursor: pointer;
   border: .0625rem solid #727490;
-  background-color: #333353;
+  background-color: $active;
 }
 
-.active{
-  border: .0625rem solid #727490;
-  background-color: #333353;
-}
 .activeSb:hover {
   cursor: pointer;
 }
 
-img {
-  width: 22px;
-  height: 22px;
-  margin-right: 14px;
-}
 
-.SbChild:nth-child(7):after {
+.proLogo:after {
   content: 'Pro';
-  width: 32px;
-  height: 20px;
+  @include wH(32px, 20px);
   text-align: center;
   font-size: 13px;
-  color: black;
+  color: $black;
   background-color: skyblue;
   position: absolute;
   top: 13px;

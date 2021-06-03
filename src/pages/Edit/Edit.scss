@@ -1,3 +1,7 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/extends';
+@import '../../sass/utilities/variables';
+
 @font-face {
   font-family: 'Roboto-Medium';
   src: url('../../fonts/Roboto-Medium.ttf')
@@ -9,126 +13,95 @@
   background-size: cover;
   margin-top: 10px;
   opacity: 0;
-  animation-name: showBgImage;
-  animation-duration: 4s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
+  animation: showBgImage 4s 1 forwards;
 
-.editContainer form {
-  width: 70%;
-  height: 375px;
-  margin-top: 26px;
-  margin-left: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  color: white;
-  opacity: 0;
-  animation-name: showDescription;
-  animation-duration: 4s;
-  animation-delay: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
+  .editContainer {
+    display: flex;
+    padding: 50px;
 
-.editContainer  form input[type="text"] {
-  width: 0px;
-  height: 40px;
-  background: transparent;
-  color: white;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid white;
-  padding-left: 10px;
-  border-radius: 0px;
-  font-family: 'Roboto-Medium';
-  font-size: 20px;
-  color: white;
-  text-shadow: 0px 0px 5px black;
-  animation-name: inputsAni;
-  animation-duration: 3s;
-  animation-delay: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
+    .poster {
+      @include wH(290px, 430px);
 
-::placeholder {
-  color: gray;
-}
+      background: transparent no-repeat center center /cover;
+      opacity: 0;
+      animation: imgAnimation 4s 2s 1 forwards;
+    }
 
-.editContainer  form span {
-  font-size: 25px;
-  text-shadow: 0px 0px 5px black;
-  font-family: 'Roboto-Medium';
-}
+    form {
+      @include wH(70%, 375px);
 
-.editContainer {
-  display: flex;
-  padding: 50px;
-}
+      margin-top: 26px;
+      margin-left: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      color: $white;
+      opacity: 0;
+      animation: showDescription 4s 2s 1 forwards;
 
-.poster {
-  height: 430px;
-  width: 290px;
-  background-color: transparent;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
-  animation-name: imgAnimation;
-  animation-duration: 4s;
-  animation-delay: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+      input[type="text"] {
+        @include wH(0px, 40px);
 
-}
+        background: transparent;
+        color: $white;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid $white;
+        padding-left: 10px;
+        border-radius: 0px;
+        font-family: 'Roboto-Medium';
+        font-size: 20px;
+        color: $white;
+        text-shadow: 0px 0px 5px $black;
+        animation: inputsAni 3s 2s 1 forwards;
+      }
 
-.editContainer_child {
-  width: 530px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+      span {
+        font-size: 25px;
+        text-shadow: 0px 0px 5px $black;
+        font-family: 'Roboto-Medium';
+      }
 
-.loader {
-  display: flex;
-  justify-content: center;
-}
+      .editContainer_child {
+        width: 530px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
+      .saveBtn {
+        @include wH(150px, 35px);
 
+        position: absolute;
+        bottom: 330px;
+        right: 28%;
+        border: 1px solid $white;
+        outline: none;
+        border-radius: 10px;
+        background: transparent;
+        font-size: 20px;
+        color: $white;
+        text-align: center;
+        text-decoration: none;
+        transition: background 2s ease;
+        text-shadow: 0px 0px 5px $black;
+        box-shadow: 0px 0px 5px 1px $black;
+        opacity: 0;
+        animation: btnAni 3s 2s 1 forwards;
+      }
 
-.editContainer  form .saveBtn {
-  height: 35px;
-  width: 150px;
-  position: absolute;
-  bottom: 330px;
-  right: 28%;
-  border: 1px solid white;
-  outline: none;
-  border-radius: 10px;
-  background: transparent;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  transition: background 2s ease;
-  text-shadow: 0px 0px 5px black;
-  box-shadow: 0px 0px 5px 1px black;
-  opacity: 0;
-  animation-name: btnAni;
-  animation-duration: 3s;
-  animation-delay: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
+      .saveBtn:hover {
+        @extend .buttonHover;
+      }
 
-.saveBtn:hover {
-  cursor: pointer;
-}
+      .saveBtn:active {
+        transform: scale(0.9)
+      }
+    }
+  }
 
-.saveBtn:active {
-  transform: scale(0.9)
 }
 
 @keyframes glow {
@@ -137,7 +110,7 @@
   }
 
   50% {
-    background-color: black
+    background-color: $black
   }
 
   100% {

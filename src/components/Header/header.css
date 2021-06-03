@@ -10,7 +10,7 @@ header {
           justify-content: space-between;
 }
 
-.rightHeader {
+header .rightHeader {
   width: 201px;
   height: 42px;
   display: -webkit-box;
@@ -21,18 +21,14 @@ header {
           align-items: center;
 }
 
-.bellLogo {
+header .rightHeader .bellLogo {
   width: 49px;
   height: 100%;
-  background-image: url(../Header/header_img/iconfinder_icon-ios7-bell_211694.png);
-  background-size: 25px;
-  background-repeat: no-repeat;
-  background-position-x: 0px;
-  background-position-y: 8px;
+  background: url(../Header/header_img/iconfinder_icon-ios7-bell_211694.png) no-repeat 0px 8px/25px;
   position: relative;
 }
 
-.bellLogo::after {
+header .rightHeader .bellLogo::after {
   content: '';
   width: 7px;
   height: 7px;
@@ -43,19 +39,15 @@ header {
   border-radius: 50%;
 }
 
-.headerImg {
+header .rightHeader .headerImg {
   width: 40px;
   height: 100%;
-  background-image: url(../../pages/SettingPage//settings_img/user.jpg);
-  background-size: 200px;
-  background-position-x: -67px;
-  background-position-y: -47px;
-  background-repeat: no-repeat;
+  background: url(../../pages/SettingPage//settings_img/user.jpg) no-repeat -67px -47px/200px;
   border-radius: 50%;
   margin-right: 7px;
 }
 
-span {
+header .rightHeader span {
   font-size: 14px;
 }
 /*# sourceMappingURL=Header.css.map */

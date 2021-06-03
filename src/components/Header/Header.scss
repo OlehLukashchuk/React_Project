@@ -1,52 +1,45 @@
+@import '../../sass/utilities/mixins';
+
 header {
-  width: 100%;
-  height: 68px;
+  @include wH(100%, 68px);
+
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
-}
 
-.rightHeader {
-  width: 201px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-}
+  .rightHeader {
+    @include wH(201px, 42px);
 
-.bellLogo {
-  width: 49px;
-  height: 100%;
-  background-image: url(../Header/header_img/iconfinder_icon-ios7-bell_211694.png);
-  background-size: 25px;
-  background-repeat: no-repeat;
-  background-position-x: 0px;
-  background-position-y: 8px;
-  position: relative;
-}
+    display: flex;
+    align-items: center;
 
-.bellLogo::after {
-  content: '';
-  width: 7px;
-  height: 7px;
-  position: absolute;
-  top: 5px;
-  right: 21px;
-  background-color: red;
-  border-radius: 50%;
-}
+    .bellLogo {
+      @include wH(49px, 100%);
 
-.headerImg {
-  width: 40px;
-  height: 100%;
-  background-image: url(../../pages/SettingPage//settings_img/user.jpg);
-  background-size: 200px;
-  background-position-x: -67px;
-  background-position-y: -47px;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  margin-right: 7px;
-}
+      background: url(../Header/header_img/iconfinder_icon-ios7-bell_211694.png) no-repeat 0px 8px /25px;
+      position: relative;
+    }
 
-span {
-  font-size: 14px;
+    .bellLogo::after {
+      content: '';
+      @include wH(7px, 7px);
+      position: absolute;
+      top: 5px;
+      right: 21px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .headerImg {
+      @include wH(40px, 100%);
+
+      background: url(../../pages/SettingPage//settings_img/user.jpg) no-repeat -67px -47px /200px;
+      border-radius: 50%;
+      margin-right: 7px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
 }

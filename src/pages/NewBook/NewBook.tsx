@@ -1,5 +1,10 @@
-import React, { useCallback, memo, useState, ChangeEvent } from "react";
-import { NavLink } from "react-router-dom";
+import React, {
+  useCallback,
+  memo,
+  useState,
+  ChangeEvent,
+  useMemo,
+} from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import BooksAction from "../../store/action/Books";
@@ -9,7 +14,13 @@ import { BookData } from "../../constants/book";
 import "../Edit/Edit.scss";
 import "./NewBook.scss";
 
-export const NewBook = memo(() => {
+interface NewBookProps {
+  history: {
+    push: (path: string) => void;
+  };
+}
+
+export const NewBook = memo(({ history }: NewBookProps) => {
   const state = useSelector(({ addBook }: RootState) => addBook.value);
   const dispatch = useDispatch();
   const [changedValue, setValue] = useState({
@@ -21,6 +32,7 @@ export const NewBook = memo(() => {
       "https://i.pinimg.com/originals/ea/3f/d3/ea3fd3102ccf575e3c33954f73eab78d.jpg",
     id: Math.floor(Math.random() * 99),
   });
+  const [buttonState, setButtonState] = useState<boolean>(true);
 
   const inputValue = useCallback(
     (event: ChangeEvent<HTMLInputElement>, keyName: string) => {
@@ -29,11 +41,34 @@ export const NewBook = memo(() => {
     [changedValue]
   );
 
-  const addBook = useCallback(() => {
-    if (changedValue.Name !== "") {
+  const addBook = useCallback(
+    (event) => {
+      event.preventDefault();
       dispatch(BooksAction.setBooks(changedValue));
-    }
-  }, [changedValue]);
+      history.push("books");
+    },
+    [changedValue]
+  );
+
+  const changeButtonState = useCallback(() => {
+    if (
+      changedValue.Name &&
+      changedValue.Genre &&
+      changedValue.Author &&
+      changedValue.Year !== ""
+    ) {
+      setButtonState(false);
+    } else setButtonState(true);
+  }, [
+    changedValue.Name,
+    changedValue.Genre,
+    changedValue.Year,
+    changedValue.Author,
+  ]);
+
+  useMemo(() => {
+    changeButtonState();
+  }, [changeButtonState]);
 
   return (
     <div className="addContainer">
@@ -48,7 +83,6 @@ export const NewBook = memo(() => {
           ></input>
         </div>
         <div className="addContainer_child">
-          {" "}
           <span>Genre</span>
           <input
             type="text"
@@ -57,7 +91,6 @@ export const NewBook = memo(() => {
           ></input>
         </div>
         <div className="addContainer_child">
-          {" "}
           <span>Year</span>
           <input
             type="text"
@@ -74,13 +107,14 @@ export const NewBook = memo(() => {
           ></input>
         </div>
         (
-        <NavLink
-          className="saveBtn"
+        <button
+          className={buttonState ? "disabledBtnSave" : "saveBtn"}
           onClick={addBook}
-          to={changedValue.Name!=='' ? {pathname: "books" } : {pathname: "404"}}
+          disabled={buttonState}
+          // to={changedValue.Name!=='' ? {pathname: "books" } : {pathname: "404"}}
         >
           Add
-        </NavLink>
+        </button>
         )
       </form>
       <div className="shadowBox"></div>

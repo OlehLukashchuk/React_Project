@@ -27,7 +27,7 @@ export const SideBar = memo(() => {
     },
     { id: 5, icon: table, text: "Tables", link: "/tables", hasArrow: true },
     { id: 6, icon: file, text: "Page Examples", link: "/examples" },
-    { id: 7, icon: overview, text: "Plugins", link: "/plugins" },
+    { id: 7, icon: overview, text: "Plugins", link: "/plugins", pro: true },
   ];
 
   const botSbChild = [
@@ -55,6 +55,7 @@ export const SideBar = memo(() => {
         key={element.id}
         link={element.link}
         arrow={element.hasArrow ? "arrow" : ""}
+        pro={element.pro ? "proLogo" : ""}
       />
     );
   });

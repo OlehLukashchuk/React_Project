@@ -1,97 +1,103 @@
+@import '../../sass/utilities/mixins';
+@import '../../sass/utilities/extends';
+@import '../../sass/utilities/variables';
+
 @font-face {
   font-family: 'Roboto-Medium';
   src: url('../../fonts/Roboto-Medium.ttf')
 }
 
-.addContainer form {
-  width: 70%;
-  height: 375px;
-  margin-top: 26px;
-  margin-left: 50px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  color: white;
-
-}
-
-.addContainer  form input[type="text"] {
-  width:350px;
-  height: 40px;
-  background: transparent;
-  color: white;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid gray;
-  padding-left: 10px;
-  border-radius: 0px;
-  font-family: 'Roboto-Medium';
-  font-size: 20px;
-  color: black;
-  outline: none;
-}
-
-::placeholder {
-  color: gray;
-}
-
-.addContainer  form span {
-  font-size: 25px;
-  font-family: 'Roboto-Medium';
-  color: black;
-}
-
 .addContainer {
   display: flex;
   padding: 50px;
-}
 
-.addPoster {
-  height: 430px;
-  width: 290px;
-  background-color: white;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+  .addPoster {
+    @include wH(290px, 430px);
 
-.addContainer_child {
-  width: 530px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    background: $white no-repeat center center /cover;
 
-.loader {
-  display: flex;
-  justify-content: center;
-}
+  }
 
+  form {
+    @include wH(75%, 375px);
 
-.addContainer  form .saveBtn {
-  height: 35px;
-  width: 80px;
-  position: absolute;
-  bottom: 0px;
-  right: 300px;
-  border: 1px solid white;
-  outline: none;
-  border-radius: 10px;
-  background: transparent;
-  font-size: 20px;
-  color: black;
-  text-align: center;
-  transition: background 2s ease;
-  box-shadow: 0px 0px 5px 1px black;
+    margin-top: 26px;
+    margin-left: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: $white;
 
-}
+    input[type="text"] {
+      @include wH(350px, 40px);
 
-.saveBtn:hover {
-  cursor: pointer;
-}
+      background: transparent;
+      color: $white;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid gray;
+      padding-left: 10px;
+      border-radius: 0px;
+      font-family: 'Roboto-Medium';
+      font-size: 20px;
+      color: $black;
+      outline: none;
+    }
 
-.saveBtn:active {
-  transform: scale(0.9)
+    span {
+      font-size: 25px;
+      font-family: 'Roboto-Medium';
+      color: $black;
+    }
+
+    .addContainer_child {
+      width: 530px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .saveBtn {
+      @extend .buttonStyle;
+      @include wH(80px, 35px);
+
+      position: absolute;
+      bottom: 0px;
+      left: 28%;
+      border-radius: 10px;
+      font-size: 20px;
+      color: $black;
+      text-align: center;
+
+    }
+
+    .saveBtn:hover {
+      @extend .buttonHover;
+    }
+
+    .saveBtn:active {
+      transform: scale(0.9)
+    }
+
+    .disabledBtnSave {
+      @extend .buttonStyle;
+      @include wH(80px, 35px);
+
+      position: absolute;
+      bottom: 0px;
+      left: 28%;
+      border-radius: 10px;
+      font-size: 20px;
+      color: $black;
+      text-align: center;
+      opacity: 0.5;
+    }
+  }
+
+  form::placeholder {
+    color: gray;
+  }
 }
